@@ -1,0 +1,50 @@
+# Ignore build outputs
+/build
+build/
+*/build/
+
+# Ignore Node.js dependencies
+/node_modules
+node_modules/
+
+# Ignore environment variables files
+.env
+*.env
+
+# Ignore Gradle cache and build files
+.gradle/
+gradle/
+*/gradle/
+gradle-wrapper.jar
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+
+# Local properties
+local.properties
+
+# Ignore IDE files
+.idea/
+*.iml
+.project
+.settings/
+*.DS_Store
+
+# Ignore other common files
+*.log
+captures/
+output/
+
+# Android Studio specific
+app/build/
+app/release/
+app/debug/
+app/src/main/generated/
+.cxx/
+/*/build/intermediates/
+/*/build/outputs/
+/*/build/generated/
+*.nav_versions
+.externalNativeBuild
