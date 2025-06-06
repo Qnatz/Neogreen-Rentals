@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
+import com.example.myapplicationx.utils.Event
 import com.example.myapplicationx.database.dao.InvoiceDao
 import com.example.myapplicationx.database.dao.ReceiptDao
 import com.example.myapplicationx.database.dao.ReceiptInvoiceCrossRefDao
@@ -26,6 +27,7 @@ import java.util.Locale
 import androidx.room.withTransaction
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.first
+import java.lang.IllegalStateException
 import javax.inject.Inject
 
 @HiltViewModel
@@ -38,11 +40,11 @@ class ReceiptsViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _unpaidInvoices = MutableLiveData<List<InvoiceEntity>>()
-    private val _receiptError = MutableLiveData<String>()
+    private val _receiptError = MutableLiveData<Event<String>>() // Changed to Event<String>
     private val _debugReceiptData = MutableLiveData<String>()
 
     val unpaidInvoices: LiveData<List<InvoiceEntity>> get() = _unpaidInvoices
-    val receiptError: LiveData<String> get() = _receiptError
+    val receiptError: LiveData<Event<String>> get() = _receiptError // Changed to Event<String>
     val debugReceiptData: LiveData<String> get() = _debugReceiptData
 
     // Method for getting all tenants - Changed to match TenantDao return type (LiveData)
@@ -62,9 +64,10 @@ class ReceiptsViewModel @Inject constructor(
 
     // Method for inserting receipt with invoices
     suspend fun insertReceiptWithInvoices(receipt: ReceiptEntity, crossRefs: List<ReceiptInvoiceCrossRef>) {
-        database.withTransaction {
-            receiptDao.insertReceipt(receipt)
-            crossRefDao.insertAll(crossRefs)
+        try {
+            database.withTransaction {
+                receiptDao.insertReceipt(receipt)
+                crossRefDao.insertAll(crossRefs)
             
             // Update invoices based on payments
             for (crossRef in crossRefs) {
@@ -81,15 +84,25 @@ class ReceiptsViewModel @Inject constructor(
             }
             
             // Update tenant debit balance (reduced credit instead of adding)
+            val currentBalanceBeforeInsert = tenantDao.getCreditBalance(receipt.tenantId)
+            if (currentBalanceBeforeInsert < receipt.amountReceived) {
+                throw IllegalStateException("Cannot create receipt. Insufficient credit balance for tenant ${receipt.tenantId}.")
+            }
             tenantDao.deductCredit(receipt.tenantId, receipt.amountReceived)
+        }
+        } catch (e: IllegalStateException) {
+            _receiptError.postValue(Event(e.message ?: "Failed to save receipt due to validation error."))
+        } catch (e: Exception) {
+            _receiptError.postValue(Event("An unexpected error occurred while saving receipt: ${e.message}"))
         }
     }
 
     // MODIFIED: Update tenant balance logic for receipt edits
     suspend fun updateReceiptWithInvoices(receipt: ReceiptEntity, crossRefs: List<ReceiptInvoiceCrossRef>) {
-        database.withTransaction {
-            val oldReceipt = receiptDao.getReceiptByIdSync(receipt.receiptId)
-            val amountDifference = receipt.amountReceived - (oldReceipt?.amountReceived ?: 0.0)
+        try {
+            database.withTransaction {
+                val oldReceipt = receiptDao.getReceiptByIdSync(receipt.receiptId)
+                val amountDifference = receipt.amountReceived - (oldReceipt?.amountReceived ?: 0.0)
             
             // Restore old invoice amounts and delete old cross-refs
             val oldCrossRefs = crossRefDao.getByReceiptNumberList(receipt.receiptNumber)
@@ -118,12 +131,21 @@ class ReceiptsViewModel @Inject constructor(
             
             // Adjust tenant balance
             if (amountDifference != 0.0) {
-                if (amountDifference > 0) {
+                if (amountDifference > 0) { // New receipt amount is larger, more credit deducted
+                    val currentBalanceForUpdate = tenantDao.getCreditBalance(receipt.tenantId)
+                    if (currentBalanceForUpdate < amountDifference) {
+                        throw IllegalStateException("Cannot update receipt. Insufficient credit balance for tenant ${receipt.tenantId} to cover the increased amount.")
+                    }
                     tenantDao.deductCredit(receipt.tenantId, amountDifference)
-                } else {
+                } else { // New receipt amount is smaller, credit added back
                     tenantDao.addCredit(receipt.tenantId, -amountDifference)
                 }
             }
+        }
+        } catch (e: IllegalStateException) {
+            _receiptError.postValue(Event(e.message ?: "Failed to update receipt due to validation error."))
+        } catch (e: Exception) {
+            _receiptError.postValue(Event("An unexpected error occurred while updating receipt: ${e.message}"))
         }
     }
 
@@ -144,8 +166,8 @@ class ReceiptsViewModel @Inject constructor(
                         createManualReceipt(tenantId, tenantName, amount, selectedInvoices, creditNote)
                     }
                 }
-            } catch (e: Exception) {
-                _receiptError.postValue("Receipt creation failed: ${e.message}")
+            } catch (e: Exception) { // This will catch IllegalStateException from underlying calls too
+                _receiptError.postValue(Event("Receipt creation failed: ${e.message ?: "Unknown error"}"))
             }
         }
     }
@@ -195,6 +217,11 @@ class ReceiptsViewModel @Inject constructor(
         )
         
         saveReceiptWithInvoices(receipt, receiptInvoices)
+
+        val currentBalanceForAutoReceipt = tenantDao.getCreditBalance(tenantId)
+        if (currentBalanceForAutoReceipt < actualPayment) {
+            throw IllegalStateException("Cannot create auto-receipt. Insufficient credit balance for tenant $tenantId.")
+        }
         tenantDao.deductCredit(tenantId, actualPayment) // Deduct credit instead of adding
     }
 
@@ -225,6 +252,11 @@ class ReceiptsViewModel @Inject constructor(
         )
         
         saveReceiptWithInvoices(receipt, selectedInvoices)
+
+        val currentBalanceForManualReceipt = tenantDao.getCreditBalance(tenantId)
+        if (currentBalanceForManualReceipt < amount) {
+            throw IllegalStateException("Cannot create manual receipt. Insufficient credit balance for tenant $tenantId.")
+        }
         tenantDao.deductCredit(tenantId, amount) // Deduct credit instead of adding
     }
 
@@ -290,7 +322,7 @@ class ReceiptsViewModel @Inject constructor(
                     _unpaidInvoices.postValue(invoices)
                 }
             } catch (e: Exception) {
-                _receiptError.postValue("Error loading unpaid invoices: ${e.message}")
+                _receiptError.postValue(Event("Error loading unpaid invoices: ${e.message ?: "Unknown error"}"))
             }
         }
     }

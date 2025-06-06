@@ -15,7 +15,9 @@ import kotlinx.coroutines.withContext
 import java.text.SimpleDateFormat 
 import java.util.Date 
 import java.util.Locale 
+import java.lang.IllegalStateException
 import javax.inject.Inject
+import com.example.myapplicationx.utils.Event
 
 
 @HiltViewModel 
@@ -23,6 +25,9 @@ class TenantsViewModel @Inject constructor(
 private val tenantDao: TenantDao, 
 private val houseDao: HouseDao, 
 private val database: NeogreenDB ) : ViewModel() {
+
+    private val _errorEvent = MutableLiveData<Event<String>>()
+    val errorEvent: LiveData<Event<String>> get() = _errorEvent
 
 // Full tenant list
 val tenants: LiveData<List<TenantEntity>> = tenantDao.getTenantEntities().asLiveData()
@@ -63,8 +68,18 @@ fun deleteTenant(tenantId: Int) {
 fun updateCreditBalance(tenantId: Int, amount: Double) {
     viewModelScope.launch(Dispatchers.IO) {
         try {
+            if (amount < 0) {
+                val currentBalance = tenantDao.getCreditBalance(tenantId)
+                if (currentBalance + amount < 0) {
+                    throw IllegalStateException("Updating credit balance would result in a negative balance for tenant $tenantId.")
+                }
+            }
             tenantDao.addCredit(tenantId, amount)
+        } catch (e: IllegalStateException) {
+            _errorEvent.postValue(Event(e.message ?: "Error updating credit balance due to validation issue."))
+            Log.e("TenantsViewModel", "Validation error updating credit", e)
         } catch (e: Exception) {
+            _errorEvent.postValue(Event("An unexpected error occurred while updating credit balance."))
             Log.e("TenantsViewModel", "Error updating credit", e)
         }
     }
@@ -76,6 +91,7 @@ fun updateDebitBalance(tenantId: Int, amount: Double) {
         try {
             tenantDao.addDebit(tenantId, amount)
         } catch (e: Exception) {
+            _errorEvent.postValue(Event("An unexpected error occurred while updating debit balance."))
             Log.e("TenantsViewModel", "Error updating debit", e)
         }
     }
@@ -88,8 +104,18 @@ fun addDebitToTenant(tenantId: Int, amount: Double) = updateDebitBalance(tenantI
 fun addBalancesToTenant(tenantId: Int, creditToAdd: Double, debitToAdd: Double) {
     viewModelScope.launch(Dispatchers.IO) {
         try {
+            if (creditToAdd < 0) {
+                val currentBalance = tenantDao.getCreditBalance(tenantId)
+                if (currentBalance + creditToAdd < 0) {
+                    throw IllegalStateException("Adding balances would result in a negative credit balance for tenant $tenantId.")
+                }
+            }
             tenantDao.addBalances(tenantId, creditToAdd, debitToAdd)
+        } catch (e: IllegalStateException) {
+            _errorEvent.postValue(Event(e.message ?: "Error adding balances due to validation issue."))
+            Log.e("TenantsViewModel", "Validation error adding balances", e)
         } catch (e: Exception) {
+            _errorEvent.postValue(Event("An unexpected error occurred while adding balances."))
             Log.e("TenantsViewModel", "Error adding balances", e)
         }
     }
@@ -137,10 +163,11 @@ fun adjustInvoiceBalances(
     newTotal: Double
 ) {
     viewModelScope.launch(Dispatchers.IO) {
-        tenantDao.getTenantById(tenantId)?.let { tenant ->
-            database.withTransaction {
-                val currentCredit = tenant.creditBalance
-                val currentDebit = tenant.debitBalance
+        try {
+            tenantDao.getTenantById(tenantId)?.let { tenant ->
+                database.withTransaction {
+                    val currentCredit = tenant.creditBalance
+                    val currentDebit = tenant.debitBalance
                 val originalTotal = originalPaid + currentDebit - currentCredit
 
                 when {
@@ -159,7 +186,11 @@ fun adjustInvoiceBalances(
                         if (debitDec > 0) tenantDao.addDebit(tenantId, -debitDec)
                     }
                 }
-            }
+            } ?: _errorEvent.postValue(Event("Tenant not found for adjusting invoice balances."))
+        } catch (e: IllegalStateException) {
+            _errorEvent.postValue(Event(e.message ?: "Error adjusting invoice balances due to validation."))
+        } catch (e: Exception) {
+            _errorEvent.postValue(Event("An unexpected error occurred while adjusting invoice balances: ${e.message}"))
         }
     }
 }
