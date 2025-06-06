@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:fillViewport="true"
+     android:id="@+id/scrollView">
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:padding="16dp"
+         android:orientation="vertical"
+         android:id="@+id/llContainer">
+
+        <AutoCompleteTextView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="16dp"
+             android:hint="Service Name"
+             android:inputType="text"
+             android:id="@+id/autoCompleteServiceName" />
+
+        <Switch
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_marginBottom="16dp"
+             android:id="@+id/meteredSwitch"
+             android:text="Metered" />
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:visibility="gone"
+             android:layout_marginBottom="16dp"
+             android:orientation="horizontal"
+             android:id="@+id/unitPriceLayout">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:id="@+id/tvUnitPriceLabel"
+                 android:text="Unit Price: "
+                 android:layout_gravity="center_vertical" />
+
+            <EditText
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:hint="Enter unit price"
+                 android:layout_weight="1"
+                 android:inputType="numberDecimal"
+                 android:id="@+id/unitPriceEditText" />
+
+        </LinearLayout>
+
+        <Switch
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_marginBottom="16dp"
+             android:id="@+id/fixedPriceSwitch"
+             android:text="Fixed Price" />
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:visibility="gone"
+             android:layout_marginBottom="16dp"
+             android:orientation="horizontal"
+             android:id="@+id/fixedPriceLayout">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:id="@+id/tvFixedPriceLabel"
+                 android:text="Fixed Price: "
+                 android:layout_gravity="center_vertical" />
+
+            <EditText
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:hint="Enter fixed price"
+                 android:layout_weight="1"
+                 android:inputType="numberDecimal"
+                 android:id="@+id/fixedPriceEditText" />
+
+        </LinearLayout>
+
+        <Button
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_marginBottom="16dp"
+             android:id="@+id/addTaxesButton"
+             android:text="Add Taxes" />
+
+        <androidx.recyclerview.widget.RecyclerView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="16dp"
+             android:id="@+id/rvSelectedTaxes" />
+
+        <Button
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:id="@+id/saveButton"
+             android:text="Save Service" />
+
+    </LinearLayout>
+
+</ScrollView>

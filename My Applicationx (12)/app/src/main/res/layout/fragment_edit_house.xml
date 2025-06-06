@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:background="@color/background_light">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:spacing="8dp">
+
+            <!-- House Name -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="House Name"
+                android:layout_marginBottom="8dp"
+                app:endIconMode="clear_text"
+                app:hintTextAppearance="@style/TextInputHintStyle">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/houseNameInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_light" />
+            </com.google.android.material.textfield.TextInputLayout>
+            
+           <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Builging ID"
+                android:layout_marginBottom="8dp"
+                app:endIconMode="clear_text"
+                app:hintTextAppearance="@style/TextInputHintStyle">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/buildingIdInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_light" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Occupied -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Occupied"
+                android:layout_marginBottom="8dp"
+                app:endIconMode="clear_text"
+                app:hintTextAppearance="@style/TextInputHintStyle">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/occupiedInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_light" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Vacant -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Vacant"
+                android:layout_marginBottom="8dp"
+                app:endIconMode="clear_text"
+                app:hintTextAppearance="@style/TextInputHintStyle">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/vacantInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_light" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Status -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Status"
+                android:layout_marginBottom="8dp"
+                app:endIconMode="clear_text"
+                app:hintTextAppearance="@style/TextInputHintStyle">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/statusInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_light" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Save Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/saveButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/primary"
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/poppins_medium" />
+        </LinearLayout>
+    </ScrollView>
+</layout>

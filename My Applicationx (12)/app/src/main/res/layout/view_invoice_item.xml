@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="wrap_content"
+     android:layout_width="match_parent"
+     android:layout_margin="8dp"
+     app:cardElevation="4dp"
+     app:cardCornerRadius="8dp"
+     app:contentPadding="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent">
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="0dp"
+             android:layout_marginEnd="8dp"
+             android:textAppearance="?attr/textAppearanceHeadline6"
+             app:layout_constraintTop_toTopOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintEnd_toStartOf="@id/deleteItemButton"
+             android:id="@+id/tvDescription"
+             android:text="Item Description"
+             android:fontFamily="@font/poppins_medium"
+             android:textSize="15sp" />
+
+        <ImageButton
+             android:layout_height="40dp"
+             android:layout_width="40dp"
+             android:src="@drawable/ic_delete"
+             android:contentDescription="Delete Item"
+             android:background="?attr/selectableItemBackgroundBorderless"
+             app:layout_constraintTop_toTopOf="parent"
+             app:tint="@color/alert"
+             app:layout_constraintEnd_toEndOf="parent"
+             android:id="@+id/deleteItemButton" />
+
+        <com.google.android.material.divider.MaterialDivider
+             android:layout_height="1dp"
+             android:layout_width="0dp"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             android:layout_marginTop="8dp"
+             app:layout_constraintTop_toBottomOf="@id/tvDescription"
+             android:id="@+id/divider1" />
+
+        <com.google.android.material.textfield.TextInputLayout
+             android:layout_height="wrap_content"
+             android:layout_width="0dp"
+             android:layout_marginEnd="8dp"
+             android:hint="Units"
+             app:layout_constraintHorizontal_weight="1"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintEnd_toStartOf="@id/unitPriceLayout"
+             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+             android:layout_marginTop="16dp"
+             app:layout_constraintTop_toBottomOf="@id/divider1"
+             android:id="@+id/unitsLayout"
+             >
+
+            <com.google.android.material.textfield.TextInputEditText
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:inputType="numberDecimal"
+                 android:id="@+id/itemUnitsEditText" 
+                 android:fontFamily="@font/poppins_light"
+                 android:textSize="15sp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+             android:layout_height="wrap_content"
+             android:layout_width="0dp"
+             android:layout_marginEnd="8dp"
+             android:hint="Unit Price"
+             app:layout_constraintHorizontal_weight="1"
+             app:layout_constraintStart_toEndOf="@id/unitsLayout"
+             app:layout_constraintEnd_toStartOf="@id/rateLayout"
+             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+             android:layout_marginTop="16dp"
+             app:layout_constraintTop_toBottomOf="@id/divider1"
+             android:id="@+id/unitPriceLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:inputType="numberDecimal"
+                 android:id="@+id/itemUnitPriceEditText" 
+                 android:fontFamily="@font/poppins_light"
+                 android:textSize="15sp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+             android:layout_height="wrap_content"
+             android:layout_width="0dp"
+             android:hint="Rate"
+             app:layout_constraintHorizontal_weight="1"
+             app:layout_constraintStart_toEndOf="@id/unitPriceLayout"
+             app:layout_constraintEnd_toEndOf="parent"
+             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+             android:layout_marginTop="16dp"
+             app:layout_constraintTop_toBottomOf="@id/divider1"
+             android:id="@+id/rateLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:inputType="numberDecimal"
+                 android:id="@+id/itemRateEditText" 
+                 android:fontFamily="@font/poppins_light"
+                 android:textSize="15sp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+             android:layout_height="1dp"
+             android:layout_width="0dp"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             android:layout_marginTop="16dp"
+             app:layout_constraintTop_toBottomOf="@id/unitsLayout"
+             android:id="@+id/divider2" />
+
+        <androidx.recyclerview.widget.RecyclerView
+             android:layout_height="wrap_content"
+             android:layout_width="0dp"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             android:nestedScrollingEnabled="false"
+             android:layout_marginTop="12dp"
+             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+             app:layout_constraintTop_toBottomOf="@id/divider2"
+             android:id="@+id/rvInvoiceTaxes" />
+
+        <com.google.android.material.divider.MaterialDivider
+             android:layout_height="1dp"
+             android:layout_width="0dp"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             android:layout_marginTop="12dp"
+             app:layout_constraintTop_toBottomOf="@id/rvInvoiceTaxes"
+             android:id="@+id/divider3" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="8dp"
+             android:gravity="start"
+             android:textAppearance="?attr/textAppearanceSubtitle1"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             android:layout_marginTop="16dp"
+             app:layout_constraintTop_toBottomOf="@id/divider3"
+             android:id="@+id/computedTotalTextView"
+             android:text="Total: 0.00"
+             android:fontFamily="@font/poppins_medium"
+             android:textSize="15sp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

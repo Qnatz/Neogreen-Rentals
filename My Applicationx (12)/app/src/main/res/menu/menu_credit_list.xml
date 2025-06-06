@@ -1,0 +1,11 @@
+<!-- res/menu/menu_credit_list.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_add_credit"
+        android:title="Add Credit"
+        android:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_filter"
+        android:title="Filter"
+        android:showAsAction="ifRoom" />
+</menu>

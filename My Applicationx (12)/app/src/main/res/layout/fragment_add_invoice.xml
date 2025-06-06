@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools">
+     
+    <ScrollView
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:background="@color/background_light"
+         android:fillViewport="true"
+         android:padding="16dp"
+         tools:context=".ui.accounts.invoices.AddInvoiceFragment">
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:gravity="center_horizontal"
+             android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:layout_marginBottom="16dp"
+                 app:endIconMode="clear_text"
+                 android:hint="Tenant Name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:background="@android:color/transparent"
+                     android:clickable="true"
+                     android:padding="12dp"
+                     android:textSize="16sp"
+                     android:fontFamily="@font/poppins_light"
+                     android:focusable="false"
+                     android:id="@+id/editTenantName" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            
+            <com.google.android.material.textfield.TextInputLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 app:endIconMode="clear_text"
+                 android:layout_marginBottom="16dp"
+                 android:hint="Invoice Number">
+
+                <com.google.android.material.textfield.TextInputEditText
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:textSize="16sp"
+                     android:fontFamily="@font/poppins_light"
+                     android:id="@+id/editInvoiceNumber" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 app:endIconMode="clear_text"
+                 android:layout_marginBottom="16dp"
+                 android:hint="Invoice Date">
+
+                <com.google.android.material.textfield.TextInputEditText
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:clickable="true"
+                     android:textSize="16sp"
+                     android:focusable="false"
+                     android:id="@+id/editInvoiceDate" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 app:endIconMode="clear_text"
+                 android:layout_marginBottom="16dp"
+                 android:hint="Receivable Date">
+
+                <com.google.android.material.textfield.TextInputEditText
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:clickable="true"
+                     android:textSize="16sp"
+                     android:focusable="false"
+                     android:visibility="gone"
+                     android:id="@+id/editReceivableDate" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            
+
+            <com.google.android.material.textfield.TextInputLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:layout_marginBottom="16dp"
+                 app:endIconMode="clear_text"
+                 android:hint="Tenant ID">
+
+                <com.google.android.material.textfield.TextInputEditText
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:textSize="16sp"
+                     android:visibility="gone"
+                     android:inputType="number"
+                     android:id="@+id/editTenantId" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.example.myapplicationx.ui.accounts.invoices.NonScrollRecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:id="@+id/invoiceItemsRecyclerView" />
+
+            <com.google.android.material.button.MaterialButton
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:layout_marginBottom="16dp"
+                 app:icon="@drawable/ic_add"
+                 android:id="@+id/addItemButton"
+                 android:text="Add Item"
+                 app:iconGravity="textStart" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:layout_marginBottom="16dp"
+                 app:endIconMode="clear_text"
+                 android:hint="Amount">
+
+                <com.google.android.material.textfield.TextInputEditText
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:textSize="16sp"
+                     android:inputType="numberDecimal"
+                     android:id="@+id/editAmount" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 app:endIconMode="clear_text"
+                 android:layout_marginBottom="24dp"
+                 android:hint="Notes ID">
+
+                <com.google.android.material.textfield.TextInputEditText
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:textSize="16sp"
+                     android:fontFamily="@font/poppins_light"
+                     android:id="@+id/editNotesId" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:layout_marginBottom="16dp"
+                 app:endIconMode="clear_text"
+                 android:hint="Amount Due">
+
+                <com.google.android.material.textfield.TextInputEditText
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:textSize="16sp"
+                     android:visibility="gone"
+                     android:inputType="numberDecimal"
+                     android:id="@+id/editAmountDue" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:layout_marginBottom="16dp"
+                 app:endIconMode="clear_text"
+                 android:hint="Status">
+
+                <com.google.android.material.textfield.TextInputEditText
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:textSize="16sp"
+                     android:text="Unpaid"
+                     android:visibility="gone"
+                     android:fontFamily="@font/poppins_light"
+                     android:id="@+id/editStatus" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:gravity="center"
+                 android:orientation="horizontal"
+                 android:layout_marginTop="16dp">
+
+                <com.google.android.material.button.MaterialButton
+                     android:layout_height="wrap_content"
+                     android:layout_width="0dp"
+                     app:icon="@drawable/ic_save"
+                     android:layout_marginEnd="8dp"
+                     android:layout_weight="1"
+                     android:id="@+id/saveButton"
+                     android:text="Save"
+                     app:iconGravity="textStart" />
+
+                <com.google.android.material.button.MaterialButton
+                     android:layout_height="wrap_content"
+                     android:layout_width="0dp"
+                     app:icon="@drawable/ic_preview"
+                     android:layout_marginEnd="8dp"
+                     android:layout_weight="1"
+                     android:id="@+id/previewButton"
+                     android:text="Preview"
+                     app:iconGravity="textStart" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

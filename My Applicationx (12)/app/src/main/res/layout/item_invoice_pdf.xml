@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/invoiceHeader"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:gravity="center_vertical">
+
+        <!-- Description Column (35%) -->
+        <TextView
+            android:id="@+id/descriptionItem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:textColor="@color/invoice_text"
+            android:paddingStart="8dp"
+            android:paddingEnd="4dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="Rent for January"/>
+
+        <!-- Units Column (15%) -->
+        <TextView
+            android:id="@+id/itemUnits"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:textColor="@color/invoice_text"
+            android:gravity="center"
+            android:paddingHorizontal="4dp"
+            android:text="10.0"/>
+
+        <!-- Unit Price Column (25%) -->
+        <TextView
+            android:id="@+id/unitPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:textColor="@color/invoice_text"
+            android:gravity="end"
+            android:paddingHorizontal="4dp"
+            android:text="UGX 200,000"/>
+
+        <!-- Total Column (25%) -->
+        <TextView
+            android:id="@+id/rateItem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:textSize="14sp"
+            android:textColor="@color/invoice_text"
+            android:gravity="end"
+            android:paddingStart="4dp"
+            android:paddingEnd="8dp"
+            android:text="UGX 200,000"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/divider_gray"/>
+
+</LinearLayout>

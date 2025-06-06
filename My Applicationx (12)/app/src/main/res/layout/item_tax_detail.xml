@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <!-- Tax Name -->
+    <TextView
+        android:id="@+id/taxNameTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:text="Tax Name"
+        android:textStyle="bold" />
+
+    <!-- Inclusive/Exclusive Label -->
+    <TextView
+        android:id="@+id/inclusiveLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Inclusive" />
+
+    <!-- Tax Percentage -->
+    <TextView
+        android:id="@+id/taxPercentageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="10%" />
+
+    <!-- Calculated Tax Amount -->
+    <TextView
+        android:id="@+id/taxAmountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="0.00"
+        android:textStyle="bold" />
+</LinearLayout>

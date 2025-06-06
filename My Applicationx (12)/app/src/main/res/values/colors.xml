@@ -1,0 +1,52 @@
+ <resources>
+    <!-- Primary Colors -->
+    <color name="my_light_primary">#90CAF9</color>  <!-- Light Blue -->
+    <color name="my_dark_primary">#1565C0</color>   <!-- Dark Blue -->
+    <color name="my_primaryx">#2196F3</color>        <!-- Blue -->
+    <color name="my_light_secondary">#80DEEA</color> <!-- Cyan -->
+
+    <!-- Background and Status Colors -->
+    <color name="background_light">#FFFFFF</color>  <!-- White -->
+    <color name="primary">#2196F3</color>           <!-- Blue Text Color -->
+    <color name="colorPrimaryDark">#0D47A1</color>  <!-- Dark Blue -->
+   <color name="colorPrimary">#0D47A1</color>  <!-- Dark Blue -->
+   <color name="invoice_text">#0D47A1</color>
+
+
+    <!-- Gradient Colors -->
+    <color name="blue_gradient_start">#42A5F5</color>   <!-- Lighter Blue -->
+    <color name="blue_gradient_center">#2196F3</color>  <!-- Primary Blue -->
+    <color name="blue_gradient_end">#1565C0</color>     <!-- Darker Blue -->
+
+    <!-- Example Additional Colors (if needed) -->
+    <color name="green_gradient_start">#66BB6A</color>  <!-- Light Green -->
+    <color name="green_gradient_center">#43A047</color> <!-- Green -->
+    <color name="green_gradient_end">#2E7D32</color>   <!-- Dark Green -->
+    
+   <color name="ripple_effect">#42A5F5</color> <!-- Light Blue Ripple -->
+    <color name="white">#FFFFFF</color>      <!-- Pure White -->
+    <color name="black">#000000</color>      <!-- Pure Black -->
+    <color name="gray_light">#F5F5F5</color> <!-- Light Gray -->
+    <color name="gray_dark">#757575</color>  <!-- Darker Gray -->
+
+    <color name="blue">#2196F3</color> <!-- A standard blue color -->
+    <color name="darker_gray">#A9A9A9</color>
+    <color name="my_primary">#0D47A1</color> <!-- Optional: Darker blue -->
+    <color name="alert">#FF6666</color>
+    <color name="green">#2E7D32</color>
+    <color name="red">#FF6666</color>
+    
+    
+   
+    <!-- template 5 colors -->
+    <color name="primary_blue">#0D47A1</color>
+    <color name="accent_green">#4CAF50</color>
+    <color name="text_dark">#212121</color>
+    <color name="text_gray">#757575</color>
+    <color name="light_gray">#F5F5F5</color>
+    <color name="very_light_blue">#E3F2FD</color>
+    <color name="divider_gray">#DDDDDD</color>
+    <color name="white2">#FFFFFF</color>
+
+    <color name="warning_yellow">#FFFFE0</color>
+</resources>

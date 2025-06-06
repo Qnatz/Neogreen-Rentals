@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:background="@color/background_light"
+        android:fillViewport="true"
+        tools:context=".ui.accounts.receipts.EditReceiptFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Receipt Number -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Receipt Number"
+                app:endIconMode="clear_text"
+                android:layout_marginBottom="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etReceiptNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="Receipt Number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Tenant ID -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tenant ID"
+                app:endIconMode="clear_text"
+                android:layout_marginBottom="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTenantId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="Tenant ID" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Tenant Name -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tenant Name"
+                app:endIconMode="clear_text"
+                android:layout_marginBottom="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTenantName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/poppins_light"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:background="@android:color/transparent"
+                    android:text="Tenant Name" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Amount -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Amount"
+                app:endIconMode="clear_text"
+                android:layout_marginBottom="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:textSize="16sp"
+                    android:text="Amount" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Receipt Date -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Receipt Date"
+                app:endIconMode="clear_text"
+                android:layout_marginBottom="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etReceiptDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="Receipt Date" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- RecyclerView for Paid Invoices -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewInvoicesPaid"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="16dp"
+                android:scrollbars="vertical"
+                tools:listitem="@layout/item_invoice_paid" />
+
+            <!-- Add Invoice Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAddInvoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Invoice"
+                android:layout_marginBottom="16dp"
+                app:icon="@drawable/ic_add"
+                app:iconGravity="textStart" />
+
+            <!-- Receipt Note -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Receipt Note"
+                app:endIconMode="clear_text"
+                android:layout_marginBottom="24dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etReceiptNote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="Receipt Note" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Update Receipt Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnUpdateReceipt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Update Receipt"
+                app:iconGravity="textStart"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popupEnterMeteredUsageLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Metered Usage"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:id="@+id/editUsage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Usage (Units)"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="8dp" />
+
+    <EditText
+        android:id="@+id/editUnitPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Unit Price"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>

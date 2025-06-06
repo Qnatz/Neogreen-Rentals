@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:padding="16dp"
+     android:id="@+id/scrollView">
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:orientation="vertical">
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_marginBottom="4dp"
+             android:textSize="20sp"
+             android:id="@+id/tvCompanyName"
+             android:text="Zyker PC Builds"
+             android:textStyle="bold" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_marginBottom="16dp"
+             android:textSize="14sp"
+             android:id="@+id/tvCompanyAddress"
+             android:text="148, Northern Street\nGreater South Avenue\nNew York, New York 10001\nU.S.A." />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_marginBottom="8dp"
+             android:textSize="18sp"
+             android:id="@+id/tvInvoiceTitle"
+             android:text="INVOICE"
+             android:textStyle="bold" />
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="4dp"
+             android:orientation="horizontal">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:text="Invoice #: "
+                 android:textStyle="bold" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:id="@+id/tvInvoiceNumber"
+                 android:text="INV-00001" />
+
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="4dp"
+             android:orientation="horizontal">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:text="Invoice Date: "
+                 android:textStyle="bold" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:id="@+id/tvInvoiceDate"
+                 android:text="01 Aug 2024" />
+
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="4dp"
+             android:orientation="horizontal">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:text="Terms: "
+                 android:textStyle="bold" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:id="@+id/tvInvoiceTerms"
+                 android:text="Due on Receipt" />
+
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="16dp"
+             android:orientation="horizontal">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:text="Due Date: "
+                 android:textStyle="bold" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:id="@+id/tvDueDate"
+                 android:text="05 Aug 2024" />
+
+        </LinearLayout>
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_marginBottom="4dp"
+             android:id="@+id/tvBillToLabel"
+             android:text="Bill To:"
+             android:textStyle="bold" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:textSize="14sp"
+             android:id="@+id/tvBillToName"
+             android:text="Ms. Joann L. Fisher" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_marginBottom="16dp"
+             android:textSize="14sp"
+             android:id="@+id/tvBillToAddress"
+             android:text="4507 Lake Floyd Circle\nChevy Chase\n20815 Maryland" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_marginBottom="4dp"
+             android:id="@+id/tvShipToLabel"
+             android:text="Ship To:"
+             android:textStyle="bold" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:textSize="14sp"
+             android:id="@+id/tvShipToName"
+             android:text="Ms. Joann L. Fisher" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_marginBottom="16dp"
+             android:textSize="14sp"
+             android:id="@+id/tvShipToAddress"
+             android:text="4507 Lake Floyd Circle\nChevy Chase\n20815 Maryland" />
+
+        <TableLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="16dp"
+             android:stretchColumns="1">
+
+            <TableRow
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:padding="4dp"
+                     android:layout_column="0"
+                     android:text="#"
+                     android:textStyle="bold" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:padding="4dp"
+                     android:layout_column="1"
+                     android:text="ITEM AND DESCRIPTION"
+                     android:textStyle="bold" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:padding="4dp"
+                     android:layout_column="2"
+                     android:text="PRICE"
+                     android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:padding="4dp"
+                     android:layout_column="0"
+                     android:text="1" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:padding="4dp"
+                     android:layout_column="1"
+                     android:text="Gaming Keyboard\n(Mechanical, designed for gaming purposes)" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:padding="4dp"
+                     android:layout_column="2"
+                     android:text="$99.00" />
+
+            </TableRow>
+
+            <TableRow
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:padding="4dp"
+                     android:layout_column="0"
+                     android:text="2" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:padding="4dp"
+                     android:layout_column="1"
+                     android:text="Portable SSD\n(Compact and high-speed external storage)" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:padding="4dp"
+                     android:layout_column="2"
+                     android:text="$149.00" />
+
+            </TableRow>
+
+            <TableRow
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:padding="4dp"
+                     android:layout_column="0"
+                     android:text="3" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:padding="4dp"
+                     android:layout_column="1"
+                     android:text="Wireless Webcam\n(1080p video conferencing)" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:padding="4dp"
+                     android:layout_column="2"
+                     android:text="$79.00" />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="16dp"
+             android:gravity="end"
+             android:orientation="vertical">
+
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:layout_marginBottom="4dp"
+                 android:orientation="horizontal">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:layout_marginRight="8dp"
+                     android:text="Subtotal: "
+                     android:textStyle="bold" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:id="@+id/tvSubtotal"
+                     android:text="$327.00" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:layout_marginBottom="4dp"
+                 android:orientation="horizontal">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:layout_marginRight="8dp"
+                     android:text="Tax Rate: "
+                     android:textStyle="bold" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:id="@+id/tvTaxRate"
+                     android:text="5.00%" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:layout_marginBottom="4dp"
+                 android:orientation="horizontal">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:layout_marginRight="8dp"
+                     android:text="Total: "
+                     android:textStyle="bold" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:id="@+id/tvTotal"
+                     android:text="$343.35" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:layout_marginBottom="16dp"
+                 android:orientation="horizontal">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:layout_marginRight="8dp"
+                     android:text="Balance Due: "
+                     android:textStyle="bold" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:id="@+id/tvBalanceDue"
+                     android:text="$343.35" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_marginBottom="4dp"
+             android:textSize="16sp"
+             android:id="@+id/tvTermsConditionsLabel"
+             android:text="Terms and Conditions"
+             android:textStyle="bold" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:textSize="14sp"
+             android:id="@+id/tvTermsConditions"
+             android:text="All payments upon receipt of this invoice. Late payments may incur additional charges or interest as per the applicable laws." />
+
+    </LinearLayout>
+
+</ScrollView>

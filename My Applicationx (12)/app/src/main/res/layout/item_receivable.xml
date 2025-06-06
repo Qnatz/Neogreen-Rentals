@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_height="wrap_content"
+     android:layout_width="match_parent"
+     android:padding="12dp"
+     android:orientation="vertical">
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:orientation="horizontal">
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="0dp"
+             android:textSize="15sp"
+             android:fontFamily="@font/poppins_light"
+             android:textColor="@color/blue"
+             android:layout_weight="1"
+             android:id="@+id/tvTenantName"
+             android:text="Tenant Name" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:textSize="15sp"
+             android:fontFamily="@font/poppins_light"
+             android:textColor="@color/blue"
+             android:paddingStart="8dp"
+             android:id="@+id/tvAmountDue"
+             android:text="Amount Due" />
+
+    </LinearLayout>
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:orientation="horizontal">
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="0dp"
+             android:textSize="13sp"
+             android:fontFamily="@font/poppins_light"
+             android:textColor="@color/blue"
+             android:layout_weight="1"
+             android:id="@+id/tvInvoiceNumber"
+             android:text="Invoice Number" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:textSize="13sp"
+             android:fontFamily="@font/poppins_light"
+             android:textColor="@color/blue"
+             android:paddingStart="8dp"
+             android:id="@+id/tvReceivableDate"
+             android:text="Invoice Date" />
+
+    </LinearLayout>
+
+</LinearLayout>

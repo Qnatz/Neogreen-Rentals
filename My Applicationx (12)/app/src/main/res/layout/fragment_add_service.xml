@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/llContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+
+        <!-- AutoCompleteTextView for Service Name -->
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteServiceName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Service Name"
+            android:inputType="text"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Metered Switch -->
+        <Switch
+            android:id="@+id/meteredSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Metered"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Unit Price Layout (visible if metered) -->
+        <LinearLayout
+            android:id="@+id/unitPriceLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvUnitPriceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Unit Price: "
+                android:layout_gravity="center_vertical"/>
+
+            <EditText
+                android:id="@+id/unitPriceEditText"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="Enter unit price" />
+        </LinearLayout>
+
+        <!-- Fixed Price Switch -->
+        <Switch
+            android:id="@+id/fixedPriceSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fixed Price"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Fixed Price Layout (visible if fixed price switch is checked) -->
+        <LinearLayout
+            android:id="@+id/fixedPriceLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvFixedPriceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fixed Price: "
+                android:layout_gravity="center_vertical"/>
+
+            <EditText
+                android:id="@+id/fixedPriceEditText"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="Enter fixed price" />
+        </LinearLayout>
+
+        <!-- Button to Add Taxes -->
+        <Button
+            android:id="@+id/addTaxesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Taxes"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- RecyclerView to display selected taxes -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSelectedTaxes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Save Button -->
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Service" />
+    </LinearLayout>
+</ScrollView>

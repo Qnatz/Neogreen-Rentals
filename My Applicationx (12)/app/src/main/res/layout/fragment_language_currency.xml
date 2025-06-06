@@ -1,0 +1,158 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.myapplicationx.ui.settings.languageCurrencyDateFormat.LanguageCurrencyViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:background="@color/background_light">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:spacing="8dp"
+            android:paddingBottom="16dp">
+
+            <!-- Country Dropdown -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconMode="dropdown_menu"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/input_background">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/dropdownCountry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_light"
+                    android:background="@android:color/transparent"
+                    android:textColor="@android:color/black"
+                    android:paddingLeft="16dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Language Dropdown -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconMode="dropdown_menu"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/input_background">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/dropdownLanguage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_light"
+                    android:background="@android:color/transparent"
+                    android:textColor="@android:color/black"
+                    android:paddingLeft="16dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Currency Dropdown -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconMode="dropdown_menu"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/input_background">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/dropdownCurrency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_light"
+                    android:background="@android:color/transparent"
+                    android:textColor="@android:color/black"
+                    android:paddingLeft="16dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Timezone Dropdown -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconMode="dropdown_menu"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/input_background">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/spinnerTimezone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_light"
+                    android:background="@android:color/transparent"
+                    android:textColor="@android:color/black"
+                    android:paddingLeft="16dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Date Format Dropdown -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconMode="dropdown_menu"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/input_background">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/spinnerDateFormat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_light"
+                    android:background="@android:color/transparent"
+                    android:textColor="@android:color/black"
+                    android:paddingLeft="16dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Buttons (Save and Reload) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="24dp"
+                android:padding="8dp"
+                android:spacing="16dp">
+
+                <!-- Save Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonSave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Save"
+                    android:layout_marginEnd="16dp"
+                    app:icon="@drawable/ic_save"
+                    android:backgroundTint="@color/primary"
+                    android:textColor="@android:color/white"
+                    android:fontFamily="@font/poppins_medium"
+                    android:padding="12dp"/>
+
+                <!-- Reload Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonReload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reload"
+                    app:icon="@drawable/ic_reload"
+                    android:backgroundTint="@color/primary"
+                    android:textColor="@android:color/white"
+                    android:fontFamily="@font/poppins_medium"
+                    android:padding="12dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

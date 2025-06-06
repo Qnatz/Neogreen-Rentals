@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/navigation_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logo"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/navigation_company_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Company Info"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/navigation_company_signature"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Company Signature"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/navigation_language"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Language"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/navigation_templates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Templates"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/navigation_taxes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Taxes"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/navigation_backup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Backup"
+        android:padding="8dp" />
+
+</LinearLayout>

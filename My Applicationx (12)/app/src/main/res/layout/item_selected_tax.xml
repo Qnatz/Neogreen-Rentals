@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/taxNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tax Name" />
+
+    <Switch
+        android:id="@+id/inclusiveSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inclusive" />
+
+    <EditText
+        android:id="@+id/taxPercentageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Override Tax" />
+
+    <ImageButton
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_delete"
+        android:contentDescription="Delete Tax"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true" />
+</LinearLayout>

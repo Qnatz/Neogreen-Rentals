@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_dashboard">
+
+    
+    <!-- Main Fragments -->
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.myapplicationx.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <!-- Buildings Fragment -->
+    <fragment
+        android:id="@+id/navigation_buildings"
+        android:name="com.example.myapplicationx.ui.buildings.BuildingsFragment"
+        android:label="@string/title_buildings"
+        tools:layout="@layout/fragment_buildings">
+
+        <action
+            android:id="@+id/action_navigation_buildings_to_buildingDetailsFragment"
+            app:destination="@id/buildingDetailsFragment" />
+
+        <action
+            android:id="@+id/action_navigation_buildings_to_addBuildingFragment"
+            app:destination="@id/addBuildingFragment" />
+    </fragment>
+
+    <!-- Building Details Fragment -->
+    <fragment
+        android:id="@+id/buildingDetailsFragment"
+        android:name="com.example.myapplicationx.ui.buildings.BuildingDetailsFragment"
+        android:label="Building Details">
+
+        <argument
+            android:name="buildingId"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_buildingDetailsFragment_to_editBuildingFragment"
+            app:destination="@id/editBuildingFragment" />
+
+        <action
+            android:id="@+id/action_buildingDetailsFragment_to_addHouseFragment"
+            app:destination="@id/addHouseFragment" />
+
+        <action
+            android:id="@+id/action_buildingDetailsFragment_to_buildingsFragment"
+            app:destination="@id/navigation_buildings"/>
+
+        <action
+            android:id="@+id/action_buildingDetailsFragment_to_houseDetailsFragment"
+            app:destination="@id/houseDetailsFragment" />
+    </fragment>
+
+    <!-- Edit Building Fragment -->
+    <fragment
+        android:id="@+id/editBuildingFragment"
+        android:name="com.example.myapplicationx.ui.buildings.EditBuildingFragment"
+        android:label="Edit Building">
+        <argument
+            android:name="buildingId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+
+    <!-- Add Building Fragment -->
+    <fragment
+        android:id="@+id/addBuildingFragment"
+        android:name="com.example.myapplicationx.ui.buildings.AddBuildingFragment"
+        android:label="Add Building" />
+
+    <!-- House Details Fragment -->
+    <fragment
+        android:id="@+id/houseDetailsFragment"
+        android:name="com.example.myapplicationx.ui.buildings.HouseDetailsFragment"
+        android:label="House Details">
+        <argument
+            android:name="houseId"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_houseDetailsFragment_to_editHouseFragment"
+            app:destination="@id/editHouseFragment" />
+    </fragment>
+
+    <!-- Add House Fragment -->
+    <fragment
+        android:id="@+id/addHouseFragment"
+        android:name="com.example.myapplicationx.ui.buildings.AddHouseFragment"
+        android:label="Add House">
+        <argument
+            android:name="buildingId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+
+    <!-- Edit House Fragment -->
+    <fragment
+        android:id="@+id/editHouseFragment"
+        android:name="com.example.myapplicationx.ui.buildings.EditHouseFragment"
+        android:label="Edit House">
+        <argument
+            android:name="houseId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+
+    <!-- Tenants Fragment -->
+    <fragment
+        android:id="@+id/navigation_tenants"
+        android:name="com.example.myapplicationx.ui.tenants.TenantsFragment"
+        android:label="@string/title_tenants"
+        tools:layout="@layout/fragment_tenants">
+
+        <action
+            android:id="@+id/action_navigation_tenants_to_addTenantFragment"
+            app:destination="@id/addTenantFragment" />
+
+        <action
+            android:id="@+id/action_navigation_tenants_to_tenantDetailsFragment"
+            app:destination="@id/tenantDetailsFragment">
+            <argument
+                android:name="tenant"
+                app:argType="com.example.myapplicationx.database.model.TenantEntity" />
+        </action>
+
+        <action
+            android:id="@+id/action_navigation_tenants_to_editTenantFragment"
+            app:destination="@id/editTenantFragment">
+            <argument
+                android:name="tenant"
+                app:argType="com.example.myapplicationx.database.model.TenantEntity" />
+        </action>
+    </fragment>
+
+    <!-- Tenant Details Fragment -->
+    <fragment
+        android:id="@+id/tenantDetailsFragment"
+        android:name="com.example.myapplicationx.ui.tenants.TenantDetailsFragment"
+        android:label="Tenant Details"
+        tools:layout="@layout/fragment_tenant_details">
+        <argument
+            android:name="tenant"
+            app:argType="com.example.myapplicationx.database.model.TenantEntity" />
+
+        <action
+            android:id="@+id/action_tenantDetailsFragment_to_editTenantFragment"
+            app:destination="@id/editTenantFragment" />
+
+    </fragment>
+
+    <!-- Add Tenant Fragment -->
+    <fragment
+        android:id="@+id/addTenantFragment"
+        android:name="com.example.myapplicationx.ui.tenants.AddTenantFragment"
+        android:label="Add Tenant"
+        tools:layout="@layout/fragment_add_tenant" />
+
+    <!-- Edit Tenant Fragment -->
+    <fragment
+        android:id="@+id/editTenantFragment"
+        android:name="com.example.myapplicationx.ui.tenants.EditTenantFragment"
+        android:label="Edit Tenant"
+        tools:layout="@layout/fragment_edit_tenant">
+        <argument
+            android:name="tenant"
+            app:argType="com.example.myapplicationx.database.model.TenantEntity" />
+    </fragment>
+
+    <!-- Accounts Fragment -->
+    <fragment
+        android:id="@+id/navigation_accounts"
+        android:name="com.example.myapplicationx.ui.accounts.AccountsFragment"
+        android:label="@string/title_accounts"
+        tools:layout="@layout/fragment_accounts" >
+           <action
+            android:id="@+id/action_navigation_accounts_to_receivableFragment"
+            app:destination="@id/receivableFragment" />
+           <action
+            android:id="@+id/action_navigation_accounts_to_invoicesFragment"
+            app:destination="@id/invoicesFragment" />
+            <action
+            android:id="@+id/action_navigation_accounts_to_receiptsFragment"
+            app:destination="@id/navigation_receipts" />
+           <action
+            android:id="@+id/action_navigation_accounts_to_invoicablesFragment"
+            app:destination="@id/navigation_invoicables" />
+           <action
+            android:id="@+id/action_navigation_accounts_to_creditListFragment"
+            app:destination="@id/creditFragment" />
+    </fragment>
+    
+    <fragment
+        android:id="@+id/receivableFragment"
+        android:name="com.example.myapplicationx.ui.accounts.receivables.ReceivableFragment"
+        android:label="Receivables"
+        tools:layout="@layout/fragment_receivable">
+        <action
+            android:id="@+id/action_receivableFragment_to_addReceivableFragment"
+            app:destination="@id/addReceivableFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addReceivableFragment"
+        android:name="com.example.myapplicationx.ui.accounts.receivables.AddReceivableFragment"
+        android:label="Add Receivable"
+        tools:layout="@layout/fragment_add_receivable" />
+
+   
+    <fragment
+        android:id="@+id/invoicesFragment"
+        android:name="com.example.myapplicationx.ui.accounts.invoices.InvoicesFragment"
+        android:label="Invoices"
+        tools:layout="@layout/fragment_invoices">
+        <action
+            android:id="@+id/action_invoicesFragment_to_addInvoiceFragment"
+            app:destination="@id/addInvoiceFragment" />
+        <action
+            android:id="@+id/action_invoicesFragment_to_editInvoiceFragment"
+            app:destination="@id/editInvoiceFragment">
+            <argument
+                android:name="invoiceNumber"
+                app:argType="string" />
+            <argument
+                android:name="invoiceId"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_invoicesFragment_to_invoiceDetailsFragment"
+            app:destination="@id/invoiceDetailsFragment">
+            <argument
+                android:name="invoiceNumber"
+                app:argType="string"
+                app:nullable="false" />
+        </action>
+    </fragment>
+
+    <!-- Edit Invoice -->
+    <fragment
+        android:id="@+id/editInvoiceFragment"
+        android:name="com.example.myapplicationx.ui.accounts.invoices.EditInvoiceFragment"
+        android:label="Edit Invoice"
+        tools:layout="@layout/fragment_edit_invoice">
+        
+        <argument
+            android:name="invoiceNumber"
+            app:argType="string" />
+        <argument
+            android:name="invoiceId"
+            app:argType="integer" />
+            
+        <action
+            android:id="@+id/action_editInvoiceFragment_to_invoicePreviewFragment"
+            app:destination="@id/invoicePreviewFragment">
+            <argument
+                android:name="templateName"
+                app:argType="string"/>
+            <argument
+                android:name="invoice"
+                app:argType="com.example.myapplicationx.database.model.InvoiceEntity"/>
+            <argument
+                android:name="items"
+                app:argType="com.example.myapplicationx.database.model.InvoiceItemEntity[]"/>
+            <argument
+                android:name="isPreviewOnly"
+                app:argType="boolean"/>
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/invoiceDetailsFragment"
+        android:name="com.example.myapplicationx.ui.accounts.invoices.InvoiceDetailsFragment"
+        android:label="Invoice Details"
+        tools:layout="@layout/fragment_invoice_details">
+        <argument
+            android:name="invoiceNumber"
+            app:argType="string"
+            app:nullable="false" />
+    </fragment>
+
+    
+    
+   <fragment
+    android:id="@+id/addInvoiceFragment"
+    android:name="com.example.myapplicationx.ui.accounts.invoices.AddInvoiceFragment"
+    android:label="Add Invoice">
+        <action
+           android:id="@+id/actionAddInvoiceFragmentToInvoicePreviewFragment"
+            app:destination="@id/invoicePreviewFragment" />
+    <argument
+        android:name="isFromInvoicable"
+        app:argType="boolean"
+        android:defaultValue="false" />
+    <argument
+        android:name="invoicableId"
+        app:argType="integer" 
+        android:defaultValue="-1" /> <!-- Use default value for nullable integer -->
+    <argument
+        android:name="tenantId"
+        app:argType="integer" 
+        android:defaultValue="-1" /> <!-- Use default value for nullable integer -->
+    <argument
+        android:name="tenantName"
+        app:argType="string"
+        android:defaultValue="" /> <!-- Use empty string for nullable string -->
+    <argument
+        android:name="nextBillingDate"
+        app:argType="string"
+        android:defaultValue="" /> <!-- Use empty string for nullable string -->
+</fragment>
+    
+  <fragment
+    android:id="@+id/invoicePreviewFragment"
+    android:name="com.example.myapplicationx.ui.accounts.invoices.InvoicePreviewFragment"
+    android:label="Invoice PDF">
+            <argument
+                android:name="templateName"
+                app:argType="string" />
+            <argument
+                android:name="invoice"
+                app:argType="com.example.myapplicationx.database.model.InvoiceEntity" />
+            <argument
+                android:name="items"
+                app:argType="com.example.myapplicationx.database.model.InvoiceItemEntity[]"
+                app:nullable="false" />
+            <argument
+                android:name="isPreviewOnly"
+                app:argType="boolean"
+                android:defaultValue="true" />
+        <action
+           android:id="@+id/action_invoicePreviewFragment_to_addTenantFragment"
+           app:destination="@id/addTenantFragment" />
+        <action
+           android:id="@+id/action_invoicePreviewFragment_to_companyInfoFragment"
+           app:destination="@id/companyInfoFragment" />
+</fragment>
+
+   <fragment
+        android:id="@+id/navigation_receipts"
+        android:name="com.example.myapplicationx.ui.accounts.receipts.ReceiptsFragment"
+        android:label="Receipts">
+       <action
+            android:id="@+id/actionReceiptsFragmentToAddReceiptFragment"
+            app:destination="@id/addReceiptFragment" />
+       <action
+            android:id="@+id/actionReceiptsFragmentToEditReceiptFragment"
+            app:destination="@id/editReceiptFragment">
+            <argument
+               android:name="receiptId"
+               app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/actionReceiptsFragmentToReceiptDetailFragment"
+            app:destination="@id/receiptDetailsFragment" >
+             <argument
+               android:name="receiptId"
+               app:argType="integer" />
+        </action>
+    </fragment>
+    
+   <fragment
+        android:id="@+id/addReceiptFragment"
+        android:name="com.example.myapplicationx.ui.accounts.receipts.AddReceiptFragment"
+        android:label="Add Receipt" />
+    
+    <fragment
+        android:id="@+id/editReceiptFragment"
+        android:name="com.example.myapplicationx.ui.accounts.receipts.EditReceiptFragment"
+        android:label="Edit Receipt">
+        <argument
+            android:name="receiptId"
+            app:argType="integer" />
+    </fragment>
+    
+   <fragment
+        android:id="@+id/receiptDetailsFragment"
+        android:name="com.example.myapplicationx.ui.accounts.receipts.ReceiptDetailFragment"
+        android:label="Receipt Details" >
+        <argument
+               android:name="receiptId"
+               app:argType="integer" />
+    </fragment>
+    
+    
+    <fragment
+        android:id="@+id/navigation_invoicables"
+        android:name="com.example.myapplicationx.ui.accounts.invoicables.InvoicablesFragment"
+        android:label="Invoicables">
+        <action
+            android:id="@+id/action_invoicablesFragment_to_addInvoicableFragment"
+            app:destination="@id/addInvoicableFragment" />
+        <action
+            android:id="@+id/action_invoicablesFragment_to_addInvoiceFragment"
+            app:destination="@id/addInvoiceFragment"/>
+       <action
+            android:id="@+id/action_invoicablesFragment_to_editInvoicableFragment"
+            app:destination="@id/editInvoicableFragment" />
+       
+    </fragment>
+
+   <fragment
+    android:id="@+id/addInvoicableFragment"
+    android:name="com.example.myapplicationx.ui.accounts.invoicables.AddInvoicableFragment"
+    android:label="Add Invoicable" />
+    
+   <fragment
+    android:id="@+id/editInvoicableFragment"
+    android:name="com.example.myapplicationx.ui.accounts.invoicables.EditInvoicableFragment"
+    android:label="Edit Invoicable" />
+    
+    <!-- CreditFragment -->
+    <fragment
+        android:id="@+id/creditFragment"
+        android:name="com.example.myapplicationx.ui.accounts.creditEntries.CreditFragment"
+        android:label="Credits">
+        <action
+            android:id="@+id/action_creditFragment_to_addCreditFragment"
+            app:destination="@id/addCreditFragment" />
+       <action
+            android:id="@+id/action_creditFragment_to_editCreditFragment"
+            app:destination="@id/editCreditFragment" />
+        <!-- mobile_navigation.xml -->
+        <action 
+            android:id="@+id/action_creditFragment_to_creditDetailsFragment"
+            app:destination="@id/creditDetailsFragment">
+            <argument 
+                android:name="creditEntry" 
+                app:argType="com.example.myapplicationx.database.model.CreditEntryEntity" />
+        </action>
+    </fragment>
+
+    <!-- AddCreditFragment -->
+    <fragment
+        android:id="@+id/addCreditFragment"
+        android:name="com.example.myapplicationx.ui.accounts.creditEntries.AddCreditFragment"
+        android:label="Add Credit">
+        <action
+            android:id="@+id/action_addCreditFragment_to_creditFragment"
+            app:popUpTo="@id/creditFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- EditCreditFragment -->
+    <fragment
+        android:id="@+id/editCreditFragment"
+        android:name="com.example.myapplicationx.ui.accounts.creditEntries.EditCreditFragment"
+        android:label="Edit Credit">
+        <argument
+            android:name="creditEntry"
+            app:argType="com.example.myapplicationx.database.model.CreditEntryEntity" />
+        <action
+            android:id="@+id/action_editCreditFragment_to_creditFragment"
+            app:popUpTo="@id/creditFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- CreditDetailsFragment -->
+    <fragment
+        android:id="@+id/creditDetailsFragment"
+        android:name="com.example.myapplicationx.ui.accounts.creditEntries.CreditDetailsFragment"
+        android:label="Credit Details">
+        <argument
+            android:name="creditEntry"
+            app:argType="com.example.myapplicationx.database.model.CreditEntryEntity" />
+        <action
+            android:id="@+id/action_creditDetailsFragment_to_editCreditFragment"
+            app:destination="@id/editCreditFragment" />
+        <action
+            android:id="@+id/action_creditDetailsFragment_to_creditFragment"
+            app:popUpTo="@id/creditFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- Settings Fragment -->
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.example.myapplicationx.ui.settings.SettingsFragment"
+        android:label="Settings">
+        <action
+            android:id="@+id/action_settings_to_logo"
+            app:destination="@id/logoFragment" />
+        <action
+            android:id="@+id/action_settings_to_companyInfo"
+            app:destination="@id/companyInfoFragment" />
+        <action
+            android:id="@+id/action_settings_to_signature"
+            app:destination="@id/signatureFragment" />
+        <action
+            android:id="@+id/action_settings_to_languageCurrency"
+            app:destination="@id/languageCurrencyFragment" />
+        <action
+            android:id="@+id/action_settings_to_templates"
+            app:destination="@id/templatesFragment" />
+        <action
+            android:id="@+id/action_settings_to_taxes"
+            app:destination="@id/taxesFragment" />
+        <action
+            android:id="@+id/action_settings_to_services"
+            app:destination="@id/serviceFragment" />
+        <action
+            android:id="@+id/action_settings_to_servicesTaxes"
+            app:destination="@id/servicesTaxesFragment" />
+        <action
+            android:id="@+id/action_settings_to_backup"
+            app:destination="@id/backupFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/logoFragment"
+        android:name="com.example.myapplicationx.ui.settings.logo.LogoFragment"
+        android:label="Company Logo" />
+
+    <fragment
+        android:id="@+id/companyInfoFragment"
+        android:name="com.example.myapplicationx.ui.settings.companyInfo.CompanyInfoFragment"
+        android:label="Company Information" />
+
+    <fragment
+        android:id="@+id/signatureFragment"
+        android:name="com.example.myapplicationx.ui.settings.companySignature.CompanySignatureFragment"
+        android:label="Company Signature" />
+
+    <fragment
+        android:id="@+id/languageCurrencyFragment"
+        android:name="com.example.myapplicationx.ui.settings.languageCurrencyDateFormat.LanguageCurrencyFragment"
+        android:label="Language, Currency, Date Format" />
+
+    <fragment
+        android:id="@+id/templatesFragment"
+        android:name="com.example.myapplicationx.ui.settings.templates.TemplatesFragment"
+        android:label="Invoice and Receipt Templates" >
+        <action 
+            android:id="@+id/action_templatesFragment_to_editInvoiceFragment"
+            app:destination="@id/editInvoiceFragment" />
+    </fragment>
+    
+    
+    <fragment
+        android:id="@+id/servicesTaxesFragment"
+        android:name="com.example.myapplicationx.ui.settings.ServicesTaxesFragment"
+        android:label="Services and Taxes" />
+
+    <fragment
+        android:id="@+id/taxesFragment"
+        android:name="com.example.myapplicationx.ui.settings.taxes.TaxesFragment"
+        android:label="Taxes">
+        <action
+            android:id="@+id/action_taxesFragment_to_addTaxFragment"
+            app:destination="@id/addTaxFragment" />
+        <action
+            android:id="@+id/action_taxesFragment_to_editTaxFragment"
+            app:destination="@id/editTaxFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addTaxFragment"
+        android:name="com.example.myapplicationx.ui.settings.taxes.AddTaxFragment"
+        android:label="Add Tax" />
+
+    <fragment
+        android:id="@+id/editTaxFragment"
+        android:name="com.example.myapplicationx.ui.settings.taxes.EditTaxFragment"
+        android:label="Edit Tax">
+        <argument
+            android:name="tax"
+            app:argType="com.example.myapplicationx.database.model.TaxEntity"
+            app:nullable="false" />
+    </fragment>
+
+    
+      <fragment
+        android:id="@+id/serviceFragment"
+        android:name="com.example.myapplicationx.ui.settings.services.ServiceFragment"
+        android:label="Services" >
+        <action
+            android:id="@+id/action_ServiceFragment_to_AddServiceFragment"
+            app:destination="@id/addServiceFragment" />
+       <action
+            android:id="@+id/action_ServiceFragment_To_EditServiceFragment"
+            app:destination="@id/editServiceFragment" />
+    </fragment>
+    
+   <fragment
+        android:id="@+id/addServiceFragment"
+        android:name="com.example.myapplicationx.ui.settings.services.AddServiceFragment"
+        android:label="Add Service" />
+    
+    <fragment
+        android:id="@+id/editServiceFragment"
+        android:name="com.example.myapplicationx.ui.settings.services.EditServiceFragment"
+        android:label="Edit Service" >
+        <argument
+            android:name="serviceId"
+            app:argType="integer"
+            app:nullable="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/backupFragment"
+        android:name="com.example.myapplicationx.ui.settings.backup.BackupFragment"
+        android:label="Backup" />
+
+</navigation>

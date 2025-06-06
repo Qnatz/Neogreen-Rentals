@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/background_light"
+    android:fillViewport="true"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <!-- Updated ImageView to match PDF behavior -->
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:adjustViewBounds="true"
+            android:maxWidth="300dp"
+            android:maxHeight="200dp"
+            android:scaleType="fitCenter"
+            android:contentDescription="Company Logo Preview"
+            android:background="@drawable/logo_preview_background"/>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="4dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_height="wrap_content"
+                android:layout_width="0dp" 
+                android:layout_weight="1" 
+                android:backgroundTint="@color/primary"
+                android:textColor="@android:color/white"
+                android:id="@+id/selectLogoButton"
+                android:text="Add Logo" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_height="wrap_content"
+                android:layout_width="0dp" 
+                android:layout_weight="1" 
+                android:backgroundTint="@color/alert"
+                android:textColor="@color/white"
+                android:id="@+id/deleteLogoButton"
+                android:text="Delete Logo"
+                android:layout_marginStart="8dp" /> 
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:backgroundTint="@color/primary"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="2dp"
+            android:id="@+id/editSaveButton"
+            android:text="Save"
+            android:minWidth="140dp" /> 
+
+    </LinearLayout>
+
+</ScrollView>

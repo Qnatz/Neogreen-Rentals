@@ -1,0 +1,106 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme with Material3 and DayNight support -->
+    <style name="Base.AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary Colors -->
+        <item name="colorPrimary">@color/my_light_primary</item>
+        <item name="colorPrimaryVariant">@color/my_dark_primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Secondary Colors -->
+        <item name="colorSecondary">@color/my_light_secondary</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+
+        <!-- Background Colors -->
+        <item name="android:windowBackground">@drawable/background_gradient</item>
+        <item name="android:statusBarColor">@color/my_dark_primary</item>
+        <item name="android:navigationBarColor">@color/my_dark_primary</item>
+
+        <!-- Ripple Effect for Interactions -->
+        <item name="android:colorControlHighlight">@color/ripple_effect</item>
+
+        <!-- Customize Animations (Optional) -->
+        <item name="android:windowEnterTransition">@transition/slide_in</item>
+        <item name="android:windowExitTransition">@transition/slide_out</item>
+    
+    </style>
+
+    <!-- Toolbar title text appearance -->
+    <style name="CustomToolbarTitle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/poppins_light</item>
+    </style>
+
+    <!-- Toolbar theme for icons (back arrow, etc.) -->
+    <style name="CustomToolbarIconTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorControlNormal">@color/white</item> <!-- Tint for back arrow -->
+    </style>
+
+    <!-- Popup menu theme for overflow menu -->
+    <style name="CustomPopupTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorControlNormal">@color/blue</item> <!-- Icon tint in overflow menu -->
+        <item name="android:textColorPrimary">@color/blue</item> <!-- Text color in overflow menu -->
+    </style>
+
+    <!-- Main application theme -->
+    <style name="AppTheme" parent="Base.AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/blue_gradient_start</item>
+        <item name="colorPrimaryDark">@color/blue_gradient_center</item> <!-- This sets the status bar color -->
+        <item name="colorAccent">@color/blue_gradient_center</item>
+    </style>
+
+    <!-- Text Styles -->
+    <style name="TenantNameText">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/my_primary</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="TenantDetailsText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/gray_dark</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <style name="BillingInfoTitleText">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/my_primary</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="TextInputHintStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColor">@color/gray_light</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- Custom AlertDialog Theme -->
+    <style name="CustomAlertDialogTheme" parent="Theme.Material3.DayNight.Dialog.Alert">
+        <item name="colorPrimary">@color/my_light_primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:textColorPrimary">@color/my_primary</item>
+        <item name="android:background">@color/white</item> <!-- Dialog background -->
+        <item name="android:buttonStyle">@style/CustomDialogButton</item>
+        <item name="android:fontFamily">@font/poppins_light</item>
+    </style>
+
+    <!-- Custom Button Style for Dialog -->
+    <style name="CustomDialogButton" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/black</item>
+    </style>
+    
+    <style name="DropdownHintStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">12sp</item> <!-- Set desired hint text size -->
+       
+    </style>
+    
+   <style name="CustomActiveIndicatorStyle" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+    <item name="android:color">@color/white</item>
+    <!-- Customize size, shape, etc., if needed -->
+</style>
+
+</resources>

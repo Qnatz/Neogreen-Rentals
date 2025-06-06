@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" 
+    android:id="@+id/tenants_nav"
+    app:startDestination="@id/navigation_tenants">
+
+    <!-- Tenants Fragment -->
+    <fragment
+        android:id="@+id/navigation_tenants"
+        android:name="com.example.myapplicationx.ui.tenants.TenantsFragment"
+        android:label="@string/title_tenants"
+        tools:layout="@layout/fragment_tenants">
+
+        <action
+            android:id="@+id/action_navigation_tenants_to_addTenantFragment"
+            app:destination="@id/addTenantFragment" />
+
+        <action
+            android:id="@+id/action_navigation_tenants_to_tenantDetailsFragment"
+            app:destination="@id/tenantDetailsFragment">
+            <argument
+                android:name="tenant"
+                app:argType="com.example.myapplicationx.database.model.TenantEntity" />
+        </action>
+
+        <action
+            android:id="@+id/action_navigation_tenants_to_editTenantFragment"
+            app:destination="@id/editTenantFragment">
+            <argument
+                android:name="tenant"
+                app:argType="com.example.myapplicationx.database.model.TenantEntity" />
+        </action>
+    </fragment>
+
+    <!-- Tenant Details Fragment -->
+    <fragment
+        android:id="@+id/tenantDetailsFragment"
+        android:name="com.example.myapplicationx.ui.tenants.TenantDetailsFragment"
+        android:label="Tenant Details"
+        tools:layout="@layout/fragment_tenant_details">
+        <argument
+            android:name="tenant"
+            app:argType="com.example.myapplicationx.database.model.TenantEntity" />
+
+        <action
+            android:id="@+id/action_tenantDetailsFragment_to_editTenantFragment"
+            app:destination="@id/editTenantFragment" />
+
+    </fragment>
+
+    <!-- Add Tenant Fragment -->
+    <fragment
+        android:id="@+id/addTenantFragment"
+        android:name="com.example.myapplicationx.ui.tenants.AddTenantFragment"
+        android:label="Add Tenant"
+        tools:layout="@layout/fragment_add_tenant" />
+
+    <!-- Edit Tenant Fragment -->
+    <fragment
+        android:id="@+id/editTenantFragment"
+        android:name="com.example.myapplicationx.ui.tenants.EditTenantFragment"
+        android:label="Edit Tenant"
+        tools:layout="@layout/fragment_edit_tenant">
+        <argument
+            android:name="tenant"
+            app:argType="com.example.myapplicationx.database.model.TenantEntity" />
+    </fragment>
+    
+</navigation>

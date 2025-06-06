@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_light"
+        android:padding="16dp"
+        android:clipToPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Receipt Information Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardElevation="10dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvReceiptNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="Receipt Number:"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/blue" />
+
+                    <TextView
+                        android:id="@+id/tvTenantId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="Tenant ID:"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/blue" />
+
+                    <TextView
+                        android:id="@+id/tvTenantName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="Tenant Name:"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/blue" />
+
+                    <TextView
+                        android:id="@+id/tvAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="Amount:"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/blue" />
+
+                    <TextView
+                        android:id="@+id/tvReceiptDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="Receipt Date:"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/blue" />
+
+                    <TextView
+                        android:id="@+id/tvReceiptNote"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="Receipt Note:"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/blue" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Invoices Paid RecyclerView Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardElevation="10dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="Invoices Paid"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/blue" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvInvoicesPaid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Action Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingTop="16dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/paymentButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="16dp"
+                    android:text="Record Payment"
+                    android:fontFamily="@font/poppins_medium"
+                    android:backgroundTint="@color/primary"
+                    android:textColor="@android:color/white" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/vacatedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="8dp"
+                    android:text="Tenant Has Vacated"
+                    android:fontFamily="@font/poppins_medium"
+                    android:backgroundTint="@android:color/holo_red_dark"
+                    android:textColor="@android:color/white" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

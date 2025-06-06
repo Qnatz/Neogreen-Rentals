@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:padding="16dp"
+     android:id="@+id/scrollView">
+
+    <RelativeLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:background="@color/white"
+         android:padding="16dp">
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:textSize="22sp"
+             android:textColor="@color/invoice_text"
+             android:layout_alignParentTop="true"
+             android:id="@+id/invoice_title"
+             android:text="INVOICE"
+             android:textStyle="bold" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_alignParentEnd="true"
+             android:textSize="14sp"
+             android:textColor="@color/invoice_text"
+             android:layout_alignTop="@id/invoice_title"
+             android:id="@+id/invoice_number"
+             android:text="Invoice #12345" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_alignEnd="@id/invoice_number"
+             android:layout_below="@id/invoice_number"
+             android:textSize="14sp"
+             android:textColor="@color/invoice_text"
+             android:id="@+id/invoice_date"
+             android:text="Invoice Date: 20-Jan-2025" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_alignEnd="@id/invoice_date"
+             android:layout_below="@id/invoice_date"
+             android:textSize="14sp"
+             android:textColor="@color/invoice_text"
+             android:id="@+id/receivable_date"
+             android:text="Receivable Date: 20-Jan-2025" />
+
+        <View
+             android:layout_height="1dp"
+             android:layout_width="match_parent"
+             android:layout_below="@id/invoice_title"
+             android:background="@drawable/divider_gray"
+             android:layout_marginTop="16dp"
+             android:id="@+id/divider1" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_below="@id/divider1"
+             android:textSize="16sp"
+             android:textColor="@color/invoice_text"
+             android:layout_marginTop="16dp"
+             android:id="@+id/company_name"
+             android:text="Your Company Name"
+             android:textStyle="bold" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_below="@id/company_name"
+             android:textSize="14sp"
+             android:textColor="@color/invoice_text"
+             android:id="@+id/company_address"
+             android:text="123 Business Street, City, Country" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_below="@id/company_address"
+             android:textSize="14sp"
+             android:textColor="@color/invoice_text"
+             android:id="@+id/company_contact"
+             android:text="Email: info@company.com" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_alignParentEnd="true"
+             android:textSize="16sp"
+             android:textColor="@color/invoice_text"
+             android:layout_alignTop="@id/company_name"
+             android:id="@+id/customer_name"
+             android:text="Customer Name"
+             android:textStyle="bold" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_alignEnd="@id/customer_name"
+             android:layout_below="@id/customer_name"
+             android:textSize="14sp"
+             android:textColor="@color/invoice_text"
+             android:id="@+id/customer_address"
+             android:text="456 Customer Lane, City, Country" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_alignEnd="@id/customer_name"
+             android:layout_below="@id/customer_address"
+             android:textSize="14sp"
+             android:textColor="@color/invoice_text"
+             android:id="@+id/customer_contact"
+             android:text="Email: customer@email.com" />
+
+        <View
+             android:layout_height="1dp"
+             android:layout_width="match_parent"
+             android:layout_below="@id/company_contact"
+             android:background="@drawable/divider_gray"
+             android:layout_marginTop="16dp"
+             android:id="@+id/divider2" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_below="@id/divider2"
+             android:textSize="16sp"
+             android:textColor="@color/invoice_text"
+             android:layout_marginTop="16dp"
+             android:id="@+id/descriptionHeader"
+             android:text="DESCRIPTION" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:gravity="end"
+             android:layout_alignParentEnd="true"
+             android:textSize="16sp"
+             android:textColor="@color/invoice_text"
+             android:layout_alignTop="@id/descriptionHeader"
+             android:id="@+id/feesHeader"
+             android:text="RATE" />
+
+        <View
+             android:layout_height="1dp"
+             android:layout_width="match_parent"
+             android:layout_below="@id/descriptionHeader"
+             android:background="@drawable/divider_gray"
+             android:layout_marginTop="8dp"
+             android:id="@+id/divider3" />
+
+        <androidx.recyclerview.widget.RecyclerView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="16dp"
+             android:layout_below="@id/divider3"
+             android:id="@+id/recyclerViewInvoiceItems" />
+
+        <View
+             android:layout_height="1dp"
+             android:layout_width="match_parent"
+             android:layout_below="@id/recyclerViewInvoiceItems"
+             android:background="@drawable/divider_gray"
+             android:id="@+id/divider4" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_below="@id/divider4"
+             android:textSize="14sp"
+             android:paddingLeft="100dp"
+             android:textColor="@color/invoice_text"
+             android:layout_marginTop="16dp"
+             android:id="@+id/subtotalLabel"
+             android:text="Subtotal" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:gravity="end"
+             android:layout_alignParentEnd="true"
+             android:textSize="14sp"
+             android:textColor="@color/invoice_text"
+             android:layout_alignTop="@id/subtotalLabel"
+             android:id="@+id/subtotalValue"
+             android:text="$14,000" />
+
+        <View
+             android:layout_height="1dp"
+             android:layout_width="match_parent"
+             android:layout_below="@id/subtotalLabel"
+             android:background="@drawable/divider_gray"
+             android:id="@+id/divider5" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_below="@id/divider5"
+             android:textSize="14sp"
+             android:paddingLeft="100dp"
+             android:textColor="@color/invoice_text"
+             android:id="@+id/taxLabel"
+             android:text="Tax (7%)" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:gravity="end"
+             android:layout_alignParentEnd="true"
+             android:textSize="14sp"
+             android:textColor="@color/invoice_text"
+             android:layout_alignTop="@id/taxLabel"
+             android:id="@+id/taxValue"
+             android:text="$950" />
+
+        <View
+             android:layout_height="1dp"
+             android:layout_width="match_parent"
+             android:layout_below="@id/taxLabel"
+             android:background="@drawable/divider_gray"
+             android:id="@+id/divider6" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_below="@id/divider6"
+             android:textSize="18sp"
+             android:paddingLeft="100dp"
+             android:textColor="@color/invoice_text"
+             android:layout_marginTop="16dp"
+             android:id="@+id/totalLabel"
+             android:text="TOTAL"
+             android:textStyle="bold" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:gravity="end"
+             android:layout_alignParentEnd="true"
+             android:textSize="18sp"
+             android:textColor="@color/invoice_text"
+             android:layout_alignTop="@id/totalLabel"
+             android:id="@+id/totalValue"
+             android:text="$14,950"
+             android:textStyle="bold" />
+
+        <View
+             android:layout_height="1dp"
+             android:layout_width="match_parent"
+             android:layout_below="@id/totalLabel"
+             android:background="@drawable/divider_gray"
+             android:layout_marginTop="16dp"
+             android:id="@+id/divider7" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_below="@id/divider7"
+             android:textSize="16sp"
+             android:textColor="@color/invoice_text"
+             android:layout_marginTop="16dp"
+             android:id="@+id/paymentInstructions"
+             android:text="Payment Details:"
+             android:textStyle="bold" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_below="@id/paymentInstructions"
+             android:textSize="14sp"
+             android:textColor="@color/invoice_text"
+             android:id="@+id/paymentBankDetails"
+             android:text="Bank: ABC Bank, Account: 123456789" />
+
+        <ImageView
+             android:layout_height="50dp"
+             android:layout_width="100dp"
+             android:layout_below="@id/paymentBankDetails"
+             android:contentDescription="Signature"
+             android:src="@drawable/ic_signature"
+             android:layout_alignParentEnd="true"
+             android:layout_marginTop="16dp"
+             android:id="@+id/signatureImage" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_alignEnd="@id/signatureImage"
+             android:layout_below="@id/signatureImage"
+             android:textSize="14sp"
+             android:textColor="@color/invoice_text"
+             android:layout_marginTop="8dp"
+             android:id="@+id/landlordName"
+             android:text="Qnatz" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_below="@id/landlordName"
+             android:gravity="center"
+             android:textSize="14sp"
+             android:textColor="@color/invoice_text"
+             android:layout_marginTop="16dp"
+             android:id="@+id/footer"
+             android:text="Thank you for doing business with us!" />
+
+    </RelativeLayout>
+
+</ScrollView>

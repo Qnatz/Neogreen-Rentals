@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:padding="16dp"
+     android:id="@+id/scrollView">
+
+    <LinearLayout
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:background="#FFFFFF"
+         android:padding="16dp"
+         android:orientation="vertical">
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:textSize="24sp"
+             android:id="@+id/invoice_title"
+             android:text="Invoice"
+             android:textStyle="bold"
+             android:layout_gravity="center" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:id="@+id/invoice_date"
+             android:text="Invoice Date: March 1, 2050" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:id="@+id/invoice_number"
+             android:text="Invoice Number: INV-2050-001" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:id="@+id/client_name"
+             android:text="Client Name: Lyda Fadel" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:id="@+id/client_address"
+             android:text="Client Address: Miami, FL 33101" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:id="@+id/client_contact"
+             android:text="Client Contact: 222 555 7777" />
+
+        <TableLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_marginTop="16dp"
+             android:stretchColumns="1">
+
+            <TableRow
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:text="Description"
+                     android:textStyle="bold" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:text="Quantity"
+                     android:textStyle="bold" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:text="Unit Price"
+                     android:textStyle="bold" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:text="Amount"
+                     android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:text="Website Development Services" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:text="1" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:text="$1,500.00" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:text="$1,500.00" />
+
+            </TableRow>
+
+            <TableRow
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:text="Monthly Maintenance" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:text="3" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:text="$200.00" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:text="$600.00" />
+
+            </TableRow>
+
+            <TableRow
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:text="Domain Registration" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:text="1" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:text="$25.00" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:text="$25.00" />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:orientation="horizontal"
+             android:layout_marginTop="16dp">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:textSize="14sp"
+                 android:layout_weight="1"
+                 android:text="Subtotal" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:text="$2,125.00" />
+
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:orientation="horizontal">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:textSize="14sp"
+                 android:layout_weight="1"
+                 android:text="Tax (5%)" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:text="$106.25" />
+
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:orientation="horizontal">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:textSize="14sp"
+                 android:layout_weight="1"
+                 android:text="Total" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:text="$2,231.25" />
+
+        </LinearLayout>
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:textSize="14sp"
+             android:layout_marginTop="16dp"
+             android:text="Payment due by March 15, 2050. Late payments may incur an additional fee of 1.5% per month on the outstanding balance. All services provided are non-refundable after 30 days." />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:textSize="14sp"
+             android:layout_marginTop="8dp"
+             android:text="For any questions, contact YOUR NAME at YOUR EMAIL." />
+
+    </LinearLayout>
+
+</ScrollView>

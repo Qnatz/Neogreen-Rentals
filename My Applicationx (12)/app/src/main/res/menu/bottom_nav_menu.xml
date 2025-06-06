@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_buildings"
+        android:icon="@drawable/ic_buildings"
+        android:title="@string/title_buildings" />
+
+   <item
+        android:id="@+id/navigation_tenants"
+        android:icon="@drawable/ic_person"
+        android:title="@string/title_tenants" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/ic_dashboard"
+        android:title="@string/title_dashboard" />
+
+   <item
+        android:id="@+id/navigation_accounts"
+        android:icon="@drawable/ic_finance"
+        android:title="@string/title_accounts" />
+
+   <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/title_settings" />
+
+
+</menu>

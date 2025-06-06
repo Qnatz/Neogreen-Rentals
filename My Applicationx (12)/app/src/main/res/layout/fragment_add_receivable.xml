@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ui.accounts.receivables.AddReceivableFragment">
+
+    <!-- Invoice Number Dropdown -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/invoiceNumberInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        
+        <AutoCompleteTextView
+            android:id="@+id/invoiceNumberEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Select Invoice Number"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Tenant Name -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tenantNameInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/invoiceNumberInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        
+        <EditText
+            android:id="@+id/tenantNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Invoice Date (timestamp)"
+            android:inputType="date"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Amount Due -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/amountDueInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tenantNameEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        
+        <EditText
+            android:id="@+id/amountDueEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Amount Due"
+            android:inputType="numberDecimal"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Date Receivable -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dateReceivableInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/amountDueInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        
+        <EditText
+            android:id="@+id/dateReceivableEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Date Receivable (timestamp)"
+            android:inputType="date"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        app:layout_constraintTop_toBottomOf="@id/dateReceivableInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,7 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_add_tenant"
+        android:icon="@drawable/ic_add_custom"
+        android:title="Add Tenant"
+        android:showAsAction="always" />
+</menu>

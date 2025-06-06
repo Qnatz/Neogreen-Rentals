@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Invoice</title>
+  <style>
+    body {
+      padding: 16px;
+      background-color: #ffffff;
+      font-family: sans-serif;
+      color: #333;
+    }
+    .container {
+      padding: 16px;
+      background-color: #ffffff;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .header .logo img {
+      width: 80px;
+      height: 80px;
+    }
+    .invoice-details {
+      text-align: right;
+    }
+    .invoice-details h1 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: bold;
+      color: #000;
+    }
+    .invoice-details p {
+      margin: 2px 0;
+      font-size: 14px;
+      color: #000;
+    }
+    .details {
+      display: flex;
+      margin-bottom: 16px;
+    }
+    .details .company, .details .customer {
+      flex: 1;
+      padding-right: 16px;
+    }
+    .details h2 {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0 0 4px 0;
+    }
+    .details p {
+      margin: 2px 0;
+      font-size: 14px;
+    }
+    .divider {
+      height: 1px;
+      background-color: #ccc;
+      margin: 8px 0;
+    }
+    .invoice-header {
+      display: flex;
+      margin-bottom: 8px;
+    }
+    .invoice-header .description {
+      flex: 1;
+      font-size: 16px;
+      font-weight: normal;
+    }
+    .invoice-header .rate {
+      font-size: 16px;
+      text-align: right;
+    }
+    .summations {
+      padding-left: 100px;
+      margin-top: 16px;
+    }
+    .summations .row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      margin: 4px 0;
+    }
+    .summations .row.total {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .payment-signature {
+      display: flex;
+      margin-top: 16px;
+    }
+    .payment-signature .payment,
+    .payment-signature .signature {
+      flex: 1;
+    }
+    .payment-signature .signature {
+      text-align: center;
+    }
+    .payment-signature .signature img {
+      width: 100px;
+      height: 50px;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <div class="header">
+      <div class="logo">
+        <img src="{{companyLogo}}" alt="Company Logo">
+      </div>
+      <div class="invoice-details">
+        <h1>{{invoiceTitle}}</h1>
+        <p>{{invoiceNumber}}</p>
+        <p>{{invoiceDate}}</p>
+        <p>{{receivableDate}}</p>
+      </div>
+    </div>
+    
+    <!-- Company and Customer Details -->
+    <div class="details">
+      <div class="company">
+        <h2>{{companyName}}</h2>
+        <p>{{companyAddress}}</p>
+        <p>{{companyContact}}</p>
+        <p>{{companyTel1}}</p>
+        <p>{{companyTel2}}</p>
+      </div>
+      <div class="customer">
+        <h2>{{customerName}}</h2>
+        <p>{{customerAddress}}</p>
+        <p>{{customerContact}}</p>
+        <p>{{customerTel1}}</p>
+        <p>{{customerTel2}}</p>
+      </div>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <!-- Invoice Items Header -->
+    <div class="invoice-header">
+      <div class="description">{{descriptionHeader}}</div>
+      <div class="rate">{{feesHeader}}</div>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <!-- Placeholder for Invoice Items List -->
+    <div id="invoiceItems">
+      {{invoiceItems}}
+    </div>
+    
+    <div class="divider"></div>
+    
+    <!-- Summations Section -->
+    <div class="summations">
+      <div class="row">
+        <span>{{subtotalLabel}}</span>
+        <span>{{subtotalValue}}</span>
+      </div>
+      <div class="divider"></div>
+      <div class="row">
+        <span>{{taxLabel}}</span>
+        <span>{{taxValue}}</span>
+      </div>
+      <div class="divider"></div>
+      <div class="row total">
+        <span>{{totalLabel}}</span>
+        <span>{{totalValue}}</span>
+      </div>
+      <div class="divider"></div>
+    </div>
+    
+    <!-- Payment Details and Signature -->
+    <div class="payment-signature">
+      <div class="payment">
+        <p><strong>{{paymentInstructions}}</strong></p>
+        <p>{{paymentBankDetails}}</p>
+      </div>
+      <div class="signature">
+        <img src="{{signatureImage}}" alt="Signature">
+        <p>{{landlordName}}</p>
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+      {{footerText}}
+    </div>
+  </div>
+</body>
+</html>

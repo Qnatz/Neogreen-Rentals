@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:padding="4dp"
+    android:clipToPadding="true"
+    android:paddingBottom="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="0dp">
+        
+        <!-- Overdue/Pending Invoicables Card (nextBillingDate is today or in the past) -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/titlePending"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Overdue / Pending Invoicables"
+                    android:textSize="15sp"
+                    android:textColor="@color/blue"
+                    android:fontFamily="@font/poppins_medium"
+                    android:paddingBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+                    
+                    <TextView
+                        android:id="@+id/titleTenantName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Name"
+                        android:textSize="12sp"
+                        android:textColor="@color/blue"
+                        android:fontFamily="@font/poppins_medium" />
+            
+                    <TextView
+                        android:id="@+id/titleNextBillingDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="8dp"
+                        android:text="Billing Date"
+                        android:textSize="12sp"
+                        android:textColor="@color/blue"
+                        android:fontFamily="@font/poppins_medium" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/pendingRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        
+        <!-- Dueup Invoicables Card (nextBillingDate is in the future) -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/titleDueUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Due Up Invoicables"
+                    android:textSize="15sp"
+                    android:textColor="@color/blue"
+                    android:fontFamily="@font/poppins_medium"
+                    android:paddingBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+                
+                    <TextView
+                        android:id="@+id/titleTenantNameD"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Name"
+                        android:textSize="12sp"
+                        android:textColor="@color/blue"
+                        android:fontFamily="@font/poppins_medium" />
+        
+                    <TextView
+                        android:id="@+id/titleNextBillingDateD"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="8dp"
+                        android:text="Next Billing Date"
+                        android:textSize="12sp"
+                        android:textColor="@color/blue"
+                        android:fontFamily="@font/poppins_medium" />
+                </LinearLayout>
+                
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/dueUpRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>

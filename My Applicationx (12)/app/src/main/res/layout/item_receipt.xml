@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Three Column Content Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:background="?android:attr/selectableItemBackground">
+
+            <!-- Column 1: Name and Receipt Number -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewTenantName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Tenant Name: "
+                    android:textColor="@color/blue"
+                    android:textSize="15sp"
+                    tools:text="John Doe" />
+
+                <TextView
+                    android:id="@+id/textViewReceiptNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="Receipt No.: "
+                    android:textColor="@color/blue"
+                    android:textSize="13sp"
+                    tools:text="123456" />
+            </LinearLayout>
+
+            <!-- Column 2: Amount and Date -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="Amount: "
+                    android:textColor="@color/blue"
+                    android:textSize="13sp"
+                    tools:text="$100.00" />
+
+                <TextView
+                    android:id="@+id/textViewDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="Date: "
+                    android:textColor="@color/blue"
+                    android:textSize="13sp"
+                    tools:text="2025-02-15" />
+            </LinearLayout>
+
+            <!-- Column 3: Buttons Stack -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end|center_vertical"
+                android:orientation="vertical"
+                android:paddingEnd="8dp">
+
+                <ImageButton
+                    android:id="@+id/btnEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Edit"
+                    android:src="@drawable/ic_edit"
+                    android:tint="@color/blue" />
+
+                <ImageButton
+                    android:id="@+id/btnDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Delete"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/ic_delete"
+                    android:tint="@color/alert" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/divider_gray" />
+
+    </LinearLayout>
+</layout>

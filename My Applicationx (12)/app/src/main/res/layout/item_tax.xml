@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_height="wrap_content"
+     android:layout_width="match_parent"
+     android:padding="16dp"
+     android:orientation="horizontal">
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="0dp"
+         android:orientation="vertical"
+         android:layout_weight="1">
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:textSize="16sp"
+             android:id="@+id/taxName"
+             android:text="Tax Name"
+             android:textStyle="bold" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:textSize="14sp"
+             android:id="@+id/taxPercentage"
+             android:text="0%" />
+
+    </LinearLayout>
+
+    <ImageButton
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:layout_marginEnd="8dp"
+         android:src="@drawable/ic_edit"
+         android:contentDescription="Edit Tax"
+         android:background="?attr/selectableItemBackgroundBorderless"
+         android:id="@+id/editButton" />
+
+    <ImageButton
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:src="@drawable/ic_delete"
+         android:contentDescription="Delete Tax"
+         android:background="?attr/selectableItemBackgroundBorderless"
+         android:id="@+id/deleteButton" />
+
+</LinearLayout>

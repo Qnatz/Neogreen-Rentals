@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/settings_nav"
+    app:startDestination="@id/navigation_settings">
+
+    <!-- Settings Fragment -->
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.example.myapplicationx.ui.settings.SettingsFragment"
+        android:label="Settings">
+        <action
+            android:id="@+id/action_settings_to_logo"
+            app:destination="@id/logoFragment" />
+        <action
+            android:id="@+id/action_settings_to_companyInfo"
+            app:destination="@id/companyInfoFragment" />
+        <action
+            android:id="@+id/action_settings_to_signature"
+            app:destination="@id/signatureFragment" />
+        <action
+            android:id="@+id/action_settings_to_languageCurrency"
+            app:destination="@id/languageCurrencyFragment" />
+        <action
+            android:id="@+id/action_settings_to_templates"
+            app:destination="@id/templatesFragment" />
+        <action
+            android:id="@+id/action_settings_to_taxes"
+            app:destination="@id/taxesFragment" />
+        <action
+            android:id="@+id/action_settings_to_backup"
+            app:destination="@id/backupFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/logoFragment"
+        android:name="com.example.myapplicationx.ui.settings.logo.LogoFragment"
+        android:label="Company Logo" />
+
+    <fragment
+        android:id="@+id/companyInfoFragment"
+        android:name="com.example.myapplicationx.ui.settings.companyInfo.CompanyInfoFragment"
+        android:label="Company Information" />
+
+    <fragment
+        android:id="@+id/signatureFragment"
+        android:name="com.example.myapplicationx.ui.settings.companySignature.CompanySignatureFragment"
+        android:label="Company Signature" />
+
+    <fragment
+        android:id="@+id/languageCurrencyFragment"
+        android:name="com.example.myapplicationx.ui.settings.languageCurrencyDateFormat.LanguageCurrencyFragment"
+        android:label="Language, Currency, Date Format" />
+
+    <fragment
+        android:id="@+id/templatesFragment"
+        android:name="com.example.myapplicationx.ui.settings.templates.TemplatesFragment"
+        android:label="Invoice and Receipt Templates" />
+
+    <fragment
+        android:id="@+id/taxesFragment"
+        android:name="com.example.myapplicationx.ui.settings.taxes.TaxesFragment"
+        android:label="Taxes" >
+        <action
+            android:id="@+id/action_taxesFragment_to_addTaxFragment"
+            app:destination="@id/addTaxFragment" />
+       <action
+            android:id="@+id/action_TaxesFragment_To_EditTaxFragment"
+            app:destination="@id/editTaxFragment" />
+    </fragment>
+    
+   <fragment
+        android:id="@+id/addTaxFragment"
+        android:name="com.example.myapplicationx.ui.settings.taxes.AddTaxFragment"
+        android:label="Add Tax" />
+    
+    <fragment
+        android:id="@+id/editTaxFragment"
+        android:name="com.example.myapplicationx.ui.settings.taxes.EditTaxFragment"
+        android:label="Edit Tax" >
+        <argument
+            android:name="tax"
+            app:argType="com.example.myapplicationx.database.model.TaxEntity"
+            app:nullable="false" />
+</fragment>
+
+    <fragment
+        android:id="@+id/backupFragment"
+        android:name="com.example.myapplicationx.ui.settings.backup.BackupFragment"
+        android:label="Backup" />
+    
+</navigation>

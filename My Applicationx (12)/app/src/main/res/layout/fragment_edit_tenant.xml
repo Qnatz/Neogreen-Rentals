@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<ScrollView 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:background="@color/background_light"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:spacing="5dp">
+
+        <!-- Tenant Name -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tenant Name"
+            android:layout_marginBottom="8dp"
+            app:endIconMode="clear_text"
+            app:hintTextAppearance="@style/TextInputHintStyle">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTenantName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppins_light" />
+           </com.google.android.material.textfield.TextInputLayout>
+           <!-- House Name Dropdown -->
+    <com.google.android.material.textfield.TextInputLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="House Name"
+    android:layout_marginBottom="8dp"
+    app:boxStrokeColor="@color/primary"
+    app:boxStrokeWidth="2dp"
+    app:boxBackgroundMode="outline"
+    app:boxStrokeWidthFocused="3dp"
+    app:endIconMode="dropdown_menu"
+    app:hintTextAppearance="@style/DropdownHintStyle">
+
+    <AutoCompleteTextView
+        android:id="@+id/editHouseNameDropdown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:fontFamily="@font/poppins_light"
+        android:padding="12dp"
+        android:background="@android:color/transparent"
+        android:textColor="@android:color/black"
+        android:inputType="none"
+        android:dropDownVerticalOffset="8dp"
+        android:dropDownHorizontalOffset="16dp"
+        android:dropDownHeight="wrap_content"
+        android:dropDownWidth="match_parent" />
+</com.google.android.material.textfield.TextInputLayout>
+       
+        <!-- House ID -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="House ID"
+            android:layout_marginBottom="8dp"
+            app:endIconMode="clear_text"
+            app:hintTextAppearance="@style/TextInputHintStyle">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editHouseId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppins_light" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Primary Phone -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Primary Phone"
+            android:layout_marginBottom="8dp"
+            app:endIconMode="clear_text"
+            app:hintTextAppearance="@style/TextInputHintStyle">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editPrimaryPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppins_light" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Secondary Phone -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Secondary Phone"
+            android:layout_marginBottom="8dp"
+            app:endIconMode="clear_text"
+            app:hintTextAppearance="@style/TextInputHintStyle">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editSecondaryPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppins_light" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Email -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:layout_marginBottom="8dp"
+            app:endIconMode="clear_text"
+            app:hintTextAppearance="@style/TextInputHintStyle">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppins_light" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Date Occupied -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Date Occupied"
+            android:layout_marginBottom="13dp"
+            app:hintTextAppearance="@style/TextInputHintStyle">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editDateOccupied"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:clickable="true"
+                android:inputType="text"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppins_light" />
+        </com.google.android.material.textfield.TextInputLayout>
+            
+           <!-- Date Vacated -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Date Vacated"
+            android:layout_marginBottom="8dp"
+            app:hintTextAppearance="@style/TextInputHintStyle">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editDateVacated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:clickable="true"
+                android:inputType="text"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppins_light" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!-- Save Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/primary"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/poppins_medium" />
+    </LinearLayout>
+</ScrollView>
+</layout>

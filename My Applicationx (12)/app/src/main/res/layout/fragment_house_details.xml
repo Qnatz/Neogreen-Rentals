@@ -1,0 +1,198 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:padding="0dp"
+    android:clipToPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="8dp">
+
+        <!-- House Info Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:orientation="vertical">
+
+               <TextView
+                    android:id="@+id/houseId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Maple House"
+                    android:textSize="20sp"
+                    android:textColor="@color/blue"
+                    android:fontFamily="@font/poppins_medium"
+                    android:layout_marginBottom="8dp" 
+                    android:visibility="gone"/>
+                
+                <TextView
+                    android:id="@+id/houseName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Maple House"
+                    android:textSize="20sp"
+                    android:textColor="@color/blue"
+                    android:fontFamily="@font/poppins_medium"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/buildingName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Belongs to: Maple Building"
+                    android:textSize="15sp"
+                    android:textColor="@color/blue"
+                    android:fontFamily="@font/poppins_light"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/occupiedUnits"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Occupied Units: 2"
+                    android:textSize="15sp"
+                    android:textColor="@color/blue"
+                    android:fontFamily="@font/poppins_light" />
+
+                <TextView
+                    android:id="@+id/vacantUnits"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vacant Units: 1"
+                    android:textSize="15sp"
+                    android:textColor="@color/blue"
+                    android:fontFamily="@font/poppins_light"
+                    android:layout_marginTop="4dp" />
+
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status: Occupied"
+                    android:textSize="15sp"
+                    android:textColor="@color/blue"
+                    android:fontFamily="@font/poppins_light"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Rent Information Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:text="Rent Details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/blue"
+                    android:fontFamily="@font/poppins_medium"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/rentAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Monthly Rent: UGX 500,000"
+                    android:textSize="15sp"
+                    android:textColor="@color/blue"
+                    android:fontFamily="@font/poppins_light" />
+
+                <TextView
+                    android:id="@+id/rentDueDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Next Due Date: 01 Nov 2024"
+                    android:textSize="15sp"
+                    android:textColor="@color/blue"
+                    android:fontFamily="@font/poppins_light"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Maintenance Info Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:text="Maintenance Information"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/blue"
+                    android:fontFamily="@font/poppins_medium"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/lastMaintenanceDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last Maintenance: 10 Oct 2024"
+                    android:textSize="15sp"
+                    android:textColor="@color/blue"
+                    android:fontFamily="@font/poppins_light" />
+
+                <TextView
+                    android:id="@+id/nextMaintenanceDue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Next Maintenance Due: 10 Nov 2024"
+                    android:textSize="15sp"
+                    android:textColor="@color/blue"
+                    android:fontFamily="@font/poppins_light"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Vacant Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/vacantButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="14dp"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:text="Mark as Vacant"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:fontFamily="@font/poppins_medium"
+            android:drawableStart="@drawable/ic_exit"
+            android:drawablePadding="8dp" />
+    </LinearLayout>
+</ScrollView>

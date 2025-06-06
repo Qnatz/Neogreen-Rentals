@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/white">
+
+    <!-- Tax Name Input -->
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTaxName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Select or enter tax name"
+        android:inputType="text" />
+
+    <!-- Tax Fixed/Variable Selector -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:text="Is this tax fixed?"
+            android:textSize="14sp"
+            android:gravity="start"
+            android:paddingEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/textIsFixedAnswer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="No"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/sliderIsFixed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:valueTo="1.0"
+            android:value="0.0"
+            android:valueFrom="0.0"
+            android:stepSize="1"/>
+    </LinearLayout>
+
+    <!-- Tax Percentage Input -->
+    <EditText
+        android:id="@+id/editTextTaxPercentage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter tax percentage"
+        android:inputType="numberDecimal"/>
+
+    <!-- Update Button -->
+    <Button
+        android:id="@+id/buttonUpdateTax"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Tax" />
+</LinearLayout>

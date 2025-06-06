@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+
+    <!-- Search bar -->
+    <EditText
+        android:id="@+id/search_bar"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:hint="Search a topic"
+        android:background="@drawable/search_background"
+        android:drawableStart="@android:drawable/ic_search_category_default"
+        android:drawablePadding="8dp"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@id/custom_toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="16dp"/>
+
+    <!-- List of topics -->
+    <ScrollView
+        android:id="@+id/topic_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/search_bar"
+        app:layout_constraintBottom_toTopOf="@id/nav_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Does Iceland Escapes offer car rentals?"
+                android:drawableStart="@android:drawable/ic_dialog_info"
+                android:drawablePadding="8dp"
+                android:padding="12dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginVertical="8dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+    
+
+</androidx.constraintlayout.widget.ConstraintLayout>

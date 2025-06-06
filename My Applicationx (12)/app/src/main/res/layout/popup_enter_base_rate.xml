@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_height="wrap_content"
+     android:layout_width="match_parent"
+     android:padding="24dp"
+     android:orientation="vertical">
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:layout_marginBottom="16dp"
+         android:textAppearance="?android:attr/textAppearanceLarge"
+         android:id="@+id/tvTitle"
+         android:text="Enter Base Rate" />
+
+    <EditText
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:hint="Base Rate"
+         android:inputType="numberDecimal"
+         android:id="@+id/editBaseRate" />
+
+    <Button
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:layout_marginTop="24dp"
+         android:id="@+id/saveButton"
+         android:text="Save" />
+
+</LinearLayout>

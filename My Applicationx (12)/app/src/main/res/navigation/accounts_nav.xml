@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/accounts_nav"
+    app:startDestination="@id/navigation_accounts">
+
+
+   <!-- Accounts Fragment -->
+    <fragment
+        android:id="@+id/navigation_accounts"
+        android:name="com.example.myapplicationx.ui.accounts.AccountsFragment"
+        android:label="@string/title_accounts"
+        tools:layout="@layout/fragment_accounts" >
+           <action
+            android:id="@+id/action_navigation_accounts_to_receivableFragment"
+            app:destination="@id/navigation_rentpayment" />
+           <action
+            android:id="@+id/action_navigation_accounts_to_invoicesFragment"
+            app:destination="@id/navigation_invoices" />
+            <action
+            android:id="@+id/action_navigation_accounts_to_receiptsFragment"
+            app:destination="@id/navigation_receipts" />
+           <action
+            android:id="@+id/action_navigation_accounts_to_invoicablesFragment"
+            app:destination="@id/navigation_invoicables" />
+    </fragment>
+    
+   <fragment
+        android:id="@+id/navigation_rentpayment"
+        android:name="com.example.myapplicationx.ui.accounts.receivables.ReceivableFragment"
+        android:label="@string/title_rent_payment"
+        tools:layout="@layout/fragment_rent_payment" >
+        <action
+            android:id="@+id/action_add_rent_payment"
+            app:destination="@id/navigation_addrentpayment" />
+    </fragment>
+    
+   <fragment
+        android:id="@+id/navigation_addrentpayment"
+        android:name="com.example.myapplicationx.ui.accounts.receivables.AddPaymentFragment"
+        android:label="Add Payment" />
+    
+   <fragment
+        android:id="@+id/navigation_invoices"
+        android:name="com.example.myapplicationx.ui.accounts.invoices.InvoicesFragment"
+        android:label="Invoices" />
+    
+   <fragment
+        android:id="@+id/navigation_receipts"
+        android:name="com.example.myapplicationx.ui.accounts.receipts.ReceiptsFragment"
+        android:label="Receipts" />
+    
+   <fragment
+        android:id="@+id/navigation_invoicables"
+        android:name="com.example.myapplicationx.ui.accounts.invoicables.InvoicablesFragment"
+        android:label="Invoicables">
+    <action
+        android:id="@+id/action_invoicablesFragment_to_addInvoiceFragment"
+        app:destination="@id/addInvoiceFragment" />
+       <action
+        android:id="@+id/action_invoicablesFragment_to_addInvoicableFragment"
+        app:destination="@id/addInvoicableFragment" />
+</fragment>
+
+<fragment
+    android:id="@+id/addInvoiceFragment"
+    android:name="com.example.myapplicationx.ui.accounts.invoices.AddInvoiceFragment"
+    android:label="AddInvoiceFragment" />
+    
+   <fragment
+    android:id="@+id/addInvoicableFragment"
+    android:name="com.example.myapplicationx.ui.accounts.invoicables.AddInvoicableFragment"
+    android:label="Add Invoicable" />
+    
+</navigation>

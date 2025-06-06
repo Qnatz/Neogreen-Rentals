@@ -1,0 +1,27 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <AutoCompleteTextView
+        android:id="@+id/dropdownTenantName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Select Tenant" />
+
+    <EditText
+        android:id="@+id/inputYear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Year"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/inputMonth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Month"
+        android:inputType="number" />
+</LinearLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/edit_building"
+        android:title="Edit Building"
+         android:icon="@drawable/ic_edit"
+        android:showAsAction="ifRoom" />
+    
+   <item
+        android:id="@+id/delete_building"
+        android:title="Delete Building"
+        android:icon="@drawable/ic_delete"
+        android:showAsAction="ifRoom"/>
+    
+   <item
+        android:id="@+id/add_house"
+        android:title="Add New House"
+       android:icon="@drawable/ic_add"
+        android:showAsAction="ifRoom" />
+
+</menu>

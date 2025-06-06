@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/buildings_nav"
+    app:startDestination="@id/navigation_buildings">
+
+       <!-- Buildings Fragment -->
+    <fragment
+        android:id="@+id/navigation_buildings"
+        android:name="com.example.myapplicationx.ui.buildings.BuildingsFragment"
+        android:label="@string/title_buildings"
+        tools:layout="@layout/fragment_buildings">
+
+        <action
+            android:id="@+id/action_navigation_buildings_to_buildingDetailsFragment"
+            app:destination="@id/buildingDetailsFragment" />
+
+        <action
+            android:id="@+id/action_navigation_buildings_to_addBuildingFragment"
+            app:destination="@id/addBuildingFragment" />
+    </fragment>
+
+    <!-- Building Details Fragment -->
+    <fragment
+        android:id="@+id/buildingDetailsFragment"
+        android:name="com.example.myapplicationx.ui.buildings.BuildingDetailsFragment"
+        android:label="Building Details">
+
+        <argument
+            android:name="buildingId"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_buildingDetailsFragment_to_editBuildingFragment"
+            app:destination="@id/editBuildingFragment" />
+
+        <action
+            android:id="@+id/action_buildingDetailsFragment_to_addHouseFragment"
+            app:destination="@id/addHouseFragment" />
+
+        <action
+            android:id="@+id/action_buildingDetailsFragment_to_buildingsFragment"
+            app:destination="@id/navigation_buildings"/>
+
+        <action
+            android:id="@+id/action_buildingDetailsFragment_to_houseDetailsFragment"
+            app:destination="@id/houseDetailsFragment" />
+    </fragment>
+
+    <!-- Edit Building Fragment -->
+    <fragment
+        android:id="@+id/editBuildingFragment"
+        android:name="com.example.myapplicationx.ui.buildings.EditBuildingFragment"
+        android:label="Edit Building">
+        <argument
+            android:name="buildingId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+
+    <!-- Add Building Fragment -->
+    <fragment
+        android:id="@+id/addBuildingFragment"
+        android:name="com.example.myapplicationx.ui.buildings.AddBuildingFragment"
+        android:label="Add Building" />
+
+    <!-- House Details Fragment -->
+    <fragment
+        android:id="@+id/houseDetailsFragment"
+        android:name="com.example.myapplicationx.ui.buildings.HouseDetailsFragment"
+        android:label="House Details">
+        <argument
+            android:name="houseId"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_houseDetailsFragment_to_editHouseFragment"
+            app:destination="@id/editHouseFragment" />
+    </fragment>
+
+    <!-- Add House Fragment -->
+    <fragment
+        android:id="@+id/addHouseFragment"
+        android:name="com.example.myapplicationx.ui.buildings.AddHouseFragment"
+        android:label="Add House">
+        <argument
+            android:name="buildingId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+
+    <!-- Edit House Fragment -->
+    <fragment
+        android:id="@+id/editHouseFragment"
+        android:name="com.example.myapplicationx.ui.buildings.EditHouseFragment"
+        android:label="Edit House">
+        <argument
+            android:name="houseId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+
+</navigation>

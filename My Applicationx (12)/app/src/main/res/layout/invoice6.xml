@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:background="@android:color/white">
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:padding="24dp"
+         android:orientation="vertical">
+
+        <RelativeLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="40dp">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:textSize="14sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:lineSpacingExtra="2dp"
+                 android:text="YOUR\nLOGO" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:layout_alignParentEnd="true"
+                 android:textSize="14sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:text="NO. 000001" />
+
+        </RelativeLayout>
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_marginBottom="30dp"
+             android:textSize="48sp"
+             android:fontFamily="sans-serif-black"
+             android:textColor="#1A1A1A"
+             android:text="INVOICE"
+             android:textStyle="bold" />
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="24dp"
+             android:orientation="horizontal">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:textSize="16sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:text="Date: "
+                 android:textStyle="bold" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:textSize="16sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:text="02 June, 2030" />
+
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="30dp"
+             android:orientation="horizontal">
+
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:orientation="vertical"
+                 android:layout_weight="1">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:layout_marginBottom="6dp"
+                     android:textSize="16sp"
+                     android:fontFamily="sans-serif"
+                     android:textColor="#000000"
+                     android:text="Billed to:"
+                     android:textStyle="bold" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textSize="16sp"
+                     android:fontFamily="sans-serif"
+                     android:textColor="#000000"
+                     android:text="Studio Shodwe" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textSize="16sp"
+                     android:fontFamily="sans-serif"
+                     android:textColor="#000000"
+                     android:text="123 Anywhere St., Any City" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textSize="16sp"
+                     android:fontFamily="sans-serif"
+                     android:textColor="#000000"
+                     android:text="hello@reallygreatsite.com" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:orientation="vertical"
+                 android:layout_weight="1">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:layout_marginBottom="6dp"
+                     android:textSize="16sp"
+                     android:fontFamily="sans-serif"
+                     android:textColor="#000000"
+                     android:text="From:"
+                     android:textStyle="bold" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textSize="16sp"
+                     android:fontFamily="sans-serif"
+                     android:textColor="#000000"
+                     android:text="Olivia Wilson" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textSize="16sp"
+                     android:fontFamily="sans-serif"
+                     android:textColor="#000000"
+                     android:text="123 Anywhere St., Any City" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textSize="16sp"
+                     android:fontFamily="sans-serif"
+                     android:textColor="#000000"
+                     android:text="hello@reallygreatsite.com" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:background="#E8E8E8"
+             android:padding="10dp"
+             android:orientation="horizontal">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:textSize="16sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:layout_weight="2"
+                 android:text="Item"
+                 android:textStyle="bold" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:textSize="16sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:layout_weight="1"
+                 android:text="Quantity"
+                 android:textStyle="bold" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:textSize="16sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:layout_weight="1"
+                 android:text="Price"
+                 android:textStyle="bold" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:gravity="end"
+                 android:textSize="16sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:layout_weight="1"
+                 android:text="Amount"
+                 android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:padding="10dp"
+             android:orientation="horizontal">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:textSize="16sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:layout_weight="2"
+                 android:text="Logo" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:textSize="16sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:layout_weight="1"
+                 android:text="1" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:textSize="16sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:layout_weight="1"
+                 android:text="$500" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:gravity="end"
+                 android:textSize="16sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:layout_weight="1"
+                 android:text="$500" />
+
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:padding="10dp"
+             android:orientation="horizontal">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:textSize="16sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:layout_weight="2"
+                 android:text="Banner (2x6m)" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:textSize="16sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:layout_weight="1"
+                 android:text="2" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:textSize="16sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:layout_weight="1"
+                 android:text="$45" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:gravity="end"
+                 android:textSize="16sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:layout_weight="1"
+                 android:text="$90" />
+
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:padding="10dp"
+             android:orientation="horizontal">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:textSize="16sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:layout_weight="2"
+                 android:text="Poster (1x2m)" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:textSize="16sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:layout_weight="1"
+                 android:text="3" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:textSize="16sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:layout_weight="1"
+                 android:text="$55" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:gravity="end"
+                 android:textSize="16sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:layout_weight="1"
+                 android:text="$165" />
+
+        </LinearLayout>
+
+        <View
+             android:layout_height="1dp"
+             android:layout_width="match_parent"
+             android:background="#E0E0E0"
+             android:layout_marginTop="10dp" />
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:padding="10dp"
+             android:orientation="horizontal">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:gravity="end"
+                 android:textSize="16sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:layout_weight="3"
+                 android:text="Total"
+                 android:textStyle="bold" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="0dp"
+                 android:gravity="end"
+                 android:textSize="16sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:layout_weight="1"
+                 android:text="$755"
+                 android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <View
+             android:layout_height="1dp"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="30dp"
+             android:background="#E0E0E0"
+             android:layout_marginTop="10dp" />
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="8dp"
+             android:orientation="horizontal">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:textSize="16sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:text="Payment method: "
+                 android:textStyle="bold" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:textSize="16sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:text="Cash" />
+
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="40dp"
+             android:orientation="horizontal">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:textSize="16sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:text="Note: "
+                 android:textStyle="bold" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:textSize="16sp"
+                 android:fontFamily="sans-serif"
+                 android:textColor="#000000"
+                 android:text="Thank you for choosing us!" />
+
+        </LinearLayout>
+
+        <FrameLayout
+             android:layout_height="200dp"
+             android:layout_width="match_parent">
+
+            <View
+                 android:layout_height="match_parent"
+                 android:layout_width="match_parent"
+                 android:background="@drawable/wave_background" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</ScrollView>
