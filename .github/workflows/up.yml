@@ -2,7 +2,8 @@ name: Move My Applicationx (12) to Root
 
 on:
   workflow_dispatch:
-
+permissions:
+  contents: write  
 jobs:
   move-to-root:
     runs-on: ubuntu-latest
