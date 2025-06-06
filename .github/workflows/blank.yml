@@ -1,5 +1,8 @@
 name: Unzip Archive
 
+permissions:
+  contents: write
+
 on:
   workflow_dispatch: # Allows manual triggering in the Actions tab
 
@@ -15,8 +18,10 @@ jobs:
 
       - name: Commit unzipped files
         run: |
-          git config --global user.name 'github-actions'
+          git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions@github.com'
           git add .
           git commit -m "Unzip archive.zip" || echo "No changes to commit"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
